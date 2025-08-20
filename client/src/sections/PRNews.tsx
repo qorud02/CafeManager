@@ -6,6 +6,15 @@ import _____1200x800 from "@assets/보도자료 1200x800.png";
 export default function PRNews() {
   const newsItems = [
     {
+      icon: DollarSign,
+      category: "기업뉴스",
+      title: "신규 파트너십 체결 소식",
+      excerpt: "대형 물류업체와의 전략적 파트너십을 통한 공급망 혁신...",
+      date: "2024.03.10",
+      gradient: "from-uc-deep to-uc-blue",
+      image: "/images/cj-logistics-partnership.png",
+    },
+    {
       icon: FileText,
       category: "보도자료",
       title: "프랜차이즈 확장 계획 발표",
@@ -14,15 +23,6 @@ export default function PRNews() {
       date: "2024.03.15",
       gradient: "from-uc-blue to-uc-accent",
       image: "/images/press-release.png",
-    },
-    {
-      icon: DollarSign,
-      category: "기업뉴스",
-      title: "신규 파트너십 체결 소식",
-      excerpt: "대형 물류업체와의 전략적 파트너십을 통한 공급망 혁신...",
-      date: "2024.03.10",
-      gradient: "from-uc-deep to-uc-blue",
-      image: "/images/cj-logistics-partnership.png",
     },
     {
       icon: Lightbulb,
