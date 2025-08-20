@@ -16,8 +16,12 @@
     "baseUrl": ".",
     "types": ["node", "vite/client"],
     "paths": {
-      "@/*": ["./client/src/*"],
-      "@shared/*": ["./shared/*"]
+      "@/*": ["./client/src/*", "./app/*"],
+      "@shared/*": ["./shared/*"],
+      "@/components/*": ["./app/components/*"],
+      "@/lib/*": ["./app/lib/*"],
+      "@/sections/*": ["./app/sections/*"],
+      "@/hooks/*": ["./app/lib/*"]
     }
   }
 }
