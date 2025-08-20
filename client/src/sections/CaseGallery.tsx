@@ -1,26 +1,41 @@
 import { motion } from "framer-motion";
 
 export default function CaseGallery() {
+  // 📝 이미지 추가 가이드:
+  // 1. 매장 표준화: 실제 매장 이미지 ✅ 설정됨
+  // 2. 파트너십: 파트너십 관련 이미지를 customImage1에 추가
+  // 3. 품질 관리: 품질 관리 관련 이미지를 customImage2에 추가
+  
+  const customImages = {
+    store: "/images/unicup-store-front.jpg", // ✅ 매장 표준화 이미지
+    partnership: null, // 🔧 파트너십 이미지 경로를 여기에 추가 (예: "/images/partnership.jpg")
+    quality: null, // 🔧 품질 관리 이미지 경로를 여기에 추가 (예: "/images/quality.jpg")
+  };
+
   const cases = [
     {
-      image: "/images/unicup-store-front.jpg", // 실제 유니컵 매장 이미지
+      id: "store",
+      image: customImages.store,
       title: "매장 표준화",
       subtitle: "일관된 브랜드 경험",
       alt: "유니컵커피 매장 외관 - 일관된 브랜드 디자인과 전문적인 매장 설계",
+      fallbackImage: "/images/store-front.jpg",
     },
     {
-      image: null, // 파트너십 이미지를 여기에 추가하세요
+      id: "partnership",
+      image: customImages.partnership,
       title: "파트너십",
       subtitle: "협업을 통한 성장",
       alt: "유니컵컴퍼니 파트너십 - 프랜차이즈 운영 및 협업 관계",
-      fallbackImage: "/images/meeting.jpg", // 기본 이미지
+      fallbackImage: "/images/meeting.jpg",
     },
     {
-      image: null, // 품질 관리 이미지를 여기에 추가하세요
+      id: "quality",
+      image: customImages.quality,
       title: "품질 관리",
       subtitle: "생산 표준화",
       alt: "유니컵컴퍼니 품질 관리 - 표준화된 생산 및 품질 시스템",
-      fallbackImage: "/images/factory.jpg", // 기본 이미지
+      fallbackImage: "/images/factory.jpg",
     },
   ];
 
