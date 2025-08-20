@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function CaseGallery() {
   const cases = [
     {
-      image: "/images/store-front.jpg",
+      image: "/images/unicup-store-front.jpg",
       title: "매장 표준화",
       subtitle: "일관된 브랜드 경험",
       alt: "유니컵커피 매장 외관 - 일관된 브랜드 디자인과 전문적인 매장 설계",
