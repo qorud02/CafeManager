@@ -11,6 +11,7 @@ export default function PRNews() {
         "유니컵컴퍼니의 새로운 프랜차이즈 전략과 2024년 확장 계획에 대한...",
       date: "2024.03.15",
       gradient: "from-uc-blue to-uc-accent",
+      image: "/images/press-release.png",
     },
     {
       icon: DollarSign,
@@ -56,11 +57,19 @@ export default function PRNews() {
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
               >
                 <div
-                  className={`h-48 bg-gradient-to-br ${item.gradient} relative`}
+                  className={`h-48 bg-gradient-to-br ${item.gradient} relative overflow-hidden`}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <IconComponent className="w-12 h-12 text-white/70" />
-                  </div>
+                  {item.image ? (
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <IconComponent className="w-12 h-12 text-white/70" />
+                    </div>
+                  )}
                 </div>
                 <div className="p-6">
                   <div className="text-sm text-uc-accent mb-2">
