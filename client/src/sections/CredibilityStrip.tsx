@@ -3,7 +3,7 @@ import Gemini_Generated_Image_tbmyintbmyintbmy______ from "@assets/Gemini_Genera
 import ____ from "@assets/다운로드.png";
 export default function CredibilityStrip() {
   const stats = [
-    { value: "월 15만+", label: "방문 고객" },
+    { value: "48%+", label: "재방문율" },
     { value: "HQ O2O", label: "운영 시스템" },
     { value: "품질 KPI", label: "실측 운영" },
   ];
