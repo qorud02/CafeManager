@@ -60,14 +60,14 @@ export default function PRNews() {
           </p>
         </div>
 
-        {/* 첫 번째 영역 - 기업뉴스 */}
-        <div className="mb-12">
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* 첫 번째 영역 - 기업뉴스 */}
           <motion.article
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer max-w-md mx-auto"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
           >
             <div className="p-6">
               <div className="text-sm text-uc-accent mb-2">
@@ -80,16 +80,14 @@ export default function PRNews() {
               <div className="text-xs text-uc-gray">{newsItems[0].date}</div>
             </div>
           </motion.article>
-        </div>
 
-        {/* 두 번째 영역 - 보도자료 */}
-        <div className="mb-12">
+          {/* 두 번째 영역 - 보도자료 */}
           <motion.article
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer max-w-md mx-auto"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
           >
             <div className="p-6">
               <div className="text-sm text-uc-accent mb-2">
@@ -102,16 +100,14 @@ export default function PRNews() {
               <div className="text-xs text-uc-gray">{newsItems[1].date}</div>
             </div>
           </motion.article>
-        </div>
 
-        {/* 세 번째 영역 - 혁신 */}
-        <div className="mb-12">
+          {/* 세 번째 영역 - 혁신 */}
           <motion.article
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer max-w-md mx-auto"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
           >
             <div className="p-6">
               <div className="text-sm text-uc-accent mb-2">
