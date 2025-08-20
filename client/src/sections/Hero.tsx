@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
+import Gemini_Generated_Image_tbmyintbmyintbmy______ from "@assets/Gemini_Generated_Image_tbmyintbmyintbmy - 편집함.png";
+
 export default function Hero() {
   return (
     <section className="hero-bg min-h-screen flex items-center relative overflow-hidden">
@@ -46,7 +48,7 @@ export default function Hero() {
           >
             <div className="animate-float">
               <img
-                src="/images/logo-uc-company.png"
+                src={Gemini_Generated_Image_tbmyintbmyintbmy______}
                 alt="유니컵컴퍼니 로고 - 프리미엄 F&B 솔루션"
                 className="w-80 md:w-96 lg:w-full max-w-lg opacity-90"
               />
@@ -54,7 +56,6 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
-
       {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
