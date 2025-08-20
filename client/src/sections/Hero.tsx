@@ -37,25 +37,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Content - Logo */}
-          <motion.div
-            className="flex justify-center lg:justify-end"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="animate-float">
-              <img
-                src="/images/logo-uc-company.png"
-                alt="유니컵컴퍼니 로고 - 프리미엄 F&B 솔루션"
-                className="w-80 md:w-96 lg:w-full max-w-lg opacity-95"
-                style={{
-                  filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(0deg) brightness(100%) contrast(100%)',
-                  mixBlendMode: 'screen'
-                }}
-              />
-            </div>
-          </motion.div>
+          
         </div>
       </div>
 
