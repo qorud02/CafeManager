@@ -33,8 +33,14 @@ export async function sendEmail(params: EmailParams): Promise<boolean> {
 
     await mailService.send(mailData);
     return true;
-  } catch (error) {
-    console.error('SendGrid email error:', error);
+  } catch (error: any) {
+    console.error('=== SendGrid 이메일 전송 오류 상세 정보 ===');
+    console.error('Error message:', error.message);
+    console.error('Error code:', error.code);
+    console.error('Error response:', error.response?.body);
+    console.error('From email:', params.from);
+    console.error('To email:', params.to);
+    console.error('===============================================');
     return false;
   }
 }
