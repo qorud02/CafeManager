@@ -8,8 +8,8 @@ export default function CaseGallery() {
   
   const customImages = {
     store: "/images/unicup-store-front.jpg", // ✅ 매장 표준화 이미지
-    partnership: null, // 🔧 파트너십 이미지 경로를 여기에 추가 (예: "/images/partnership.jpg")
-    quality: null, // 🔧 품질 관리 이미지 경로를 여기에 추가 (예: "/images/quality.jpg")
+    partnership: "/images/casegallery-cards.png", // ✅ 파트너십 이미지 (첨부된 이미지 사용)
+    quality: "/images/casegallery-cards.png", // ✅ 품질 관리 이미지 (첨부된 이미지 사용)
   };
 
   const cases = [
