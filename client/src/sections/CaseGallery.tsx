@@ -7,7 +7,7 @@ export default function CaseGallery() {
   // 3. 품질 관리: 품질 관리 관련 이미지를 customImage2에 추가
   
   const customImages = {
-    store: null, // ❌ 매장 표준화 이미지 삭제됨
+    store: "/images/unicup-store-standard.png", // ✅ 매장 표준화 이미지 (새 유니컵 매장 사진)
     partnership: null, // ❌ 파트너십 이미지 삭제됨
     quality: null, // ❌ 품질 관리 이미지 삭제됨
   };
@@ -64,7 +64,7 @@ export default function CaseGallery() {
             >
               {(caseItem.image || caseItem.fallbackImage) && (
                 <img
-                  src={(caseItem.image || caseItem.fallbackImage) as string}
+                  src={caseItem.image || caseItem.fallbackImage || ""}
                   alt={caseItem.alt}
                   className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
