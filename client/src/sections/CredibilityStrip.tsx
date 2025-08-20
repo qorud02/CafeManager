@@ -1,3 +1,4 @@
+import BRAND_IDENTITY__unicup_coffee____0524 from "@assets/BRAND-IDENTITY-[unicup-coffee]-_-0524.png";
 export default function CredibilityStrip() {
   const stats = [
     { value: "월 15만+", label: "방문 고객" },
@@ -17,9 +18,9 @@ export default function CredibilityStrip() {
               className="h-16 mr-8"
             />
             <img
-              src="/images/logo-unicup-coffee.png"
+              src={BRAND_IDENTITY__unicup_coffee____0524}
               alt="유니컵커피 브랜드 로고"
-              className="h-16"
+              className="h-32"
             />
           </div>
 

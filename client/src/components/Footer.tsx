@@ -1,6 +1,8 @@
 import { Link } from "wouter";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 
+import Gemini_Generated_Image_tbmyintbmyintbmy______ from "@assets/Gemini_Generated_Image_tbmyintbmyintbmy - 편집함.png";
+
 export default function Footer() {
   const quickLinks = [
     { href: "/about", label: "회사소개" },
@@ -17,9 +19,9 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
               <img
-                src="/images/logo-uc-company.png"
+                src={Gemini_Generated_Image_tbmyintbmyintbmy______}
                 alt="유니컵컴퍼니 로고"
-                className="h-8 w-auto mr-3"
+                className="h-8 w-auto pl-[5px] pr-[5px] pt-[-12px] pb-[-12px] ml-[2px] mr-[2px]"
               />
               <span className="text-xl font-bold text-white">유니컵컴퍼니</span>
             </div>
