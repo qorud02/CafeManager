@@ -63,7 +63,9 @@ export default function Footer() {
                 <Facebook className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/unicupcoffeekr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-uc-accent transition-colors"
                 aria-label="Instagram"
               >
