@@ -62,11 +62,6 @@ export default function BusinessLines() {
                         backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${business.backgroundImage}')`,
                       }}
                     >
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-16 h-16 bg-uc-blue rounded-2xl flex items-center justify-center">
-                          <IconComponent className="w-8 h-8 text-white" />
-                        </div>
-                      </div>
                     </div>
                     <div className="p-8">
                       <h3 className="text-xl font-bold text-white mb-4">

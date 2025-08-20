@@ -3,22 +3,24 @@ import { motion } from "framer-motion";
 export default function CaseGallery() {
   const cases = [
     {
-      image: "/images/unicup-store-front.jpg",
+      image: "/images/unicup-store-front.jpg", // 실제 유니컵 매장 이미지
       title: "매장 표준화",
       subtitle: "일관된 브랜드 경험",
       alt: "유니컵커피 매장 외관 - 일관된 브랜드 디자인과 전문적인 매장 설계",
     },
     {
-      image: "/images/meeting.jpg",
+      image: null, // 파트너십 이미지를 여기에 추가하세요
       title: "파트너십",
       subtitle: "협업을 통한 성장",
-      alt: "유니컵컴퍼니 협업 회의 - 프랜차이즈 운영 및 파트너십 논의",
+      alt: "유니컵컴퍼니 파트너십 - 프랜차이즈 운영 및 협업 관계",
+      fallbackImage: "/images/meeting.jpg", // 기본 이미지
     },
     {
-      image: "/images/factory.jpg",
+      image: null, // 품질 관리 이미지를 여기에 추가하세요
       title: "품질 관리",
-      subtitle: "생산 표준화 (예시)",
-      alt: "유니컵컴퍼니 생산시설 - 품질 관리와 확장 가능한 운영 시설 (예시)",
+      subtitle: "생산 표준화",
+      alt: "유니컵컴퍼니 품질 관리 - 표준화된 생산 및 품질 시스템",
+      fallbackImage: "/images/factory.jpg", // 기본 이미지
     },
   ];
 
@@ -46,7 +48,7 @@ export default function CaseGallery() {
               className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               <img
-                src={caseItem.image}
+                src={caseItem.image || caseItem.fallbackImage}
                 alt={caseItem.alt}
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
