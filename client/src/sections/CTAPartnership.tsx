@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import ContactModal from "@/components/ContactModal";
+import ContactModal from "../components/ContactModal";
 
 export default function CTAPartnership() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
