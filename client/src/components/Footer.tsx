@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, Youtube } from "lucide-react";
+import { Instagram, Youtube } from "lucide-react";
 
 import Gemini_Generated_Image_tbmyintbmyintbmy______ from "@assets/Gemini_Generated_Image_tbmyintbmyintbmy - 편집함.png";
 
@@ -55,13 +55,6 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">소셜 미디어</h4>
             <div className="flex space-x-4 mb-6">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-uc-accent transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-6 h-6" />
-              </a>
               <a
                 href="https://www.instagram.com/unicupcoffeekr"
                 target="_blank"
