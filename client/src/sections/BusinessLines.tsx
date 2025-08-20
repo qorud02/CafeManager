@@ -7,14 +7,15 @@ export default function BusinessLines() {
       icon: Building2,
       title: "Franchise HQ",
       description: "매뉴얼·교육·메뉴 R&D를 통한 체계적인 가맹점 지원 시스템",
-      hasBackground: false,
+      hasBackground: true,
+      backgroundImage: "/images/meeting.jpg", // 교육/회의 이미지
     },
     {
       icon: Settings,
       title: "Roasting / Production",
       description: "스케일러블 생산 파트너로서 안정적인 품질 관리 시스템",
       hasBackground: true,
-      backgroundImage: "/images/factory.jpg",
+      backgroundImage: "/images/roasting-center.jpg", // 로스팅 센터 이미지
     },
     {
       icon: Package,
@@ -25,7 +26,8 @@ export default function BusinessLines() {
           <span className="text-sm text-gray-400">(파트너십 체결 후 적용)</span>
         </>
       ),
-      hasBackground: false,
+      hasBackground: true,
+      backgroundImage: "/images/cj-logistics-partnership.png", // CJ 물류 트럭 이미지
     },
   ];
 
