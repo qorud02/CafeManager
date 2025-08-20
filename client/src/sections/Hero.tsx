@@ -16,7 +16,7 @@ export default function Hero() {
             <div className="inline-block bg-uc-accent/10 text-uc-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
               프랜차이즈 본사 · 식음료 테크 법인
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               유니컵컴퍼니<br />
               <span className="text-uc-accent">F&B에 '프리미엄 효율'</span>
               <br />을 더하다
