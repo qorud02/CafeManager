@@ -30,7 +30,7 @@ export default function Footer() {
               <p>사업자등록번호: 000-00-00000</p>
               <p>주소: 서울 중구 퇴계로 450 9층</p>
               <p>대표전화: 1533-6774</p>
-              <p>이메일: info@unicupcompany.com</p>
+              <p>이메일: official@unicupcoffee.com</p>
             </div>
           </div>
 
