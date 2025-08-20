@@ -78,7 +78,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-[#9d9dc2]">
         <DialogHeader className="space-y-3 pb-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
