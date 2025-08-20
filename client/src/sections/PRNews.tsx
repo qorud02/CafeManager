@@ -8,9 +8,9 @@ export default function PRNews() {
   // 3. R&D 뉴스: rnd 이미지 설정됨 ✅
   
   const customImages = {
-    partnership: "/images/cj-logistics-partnership.png", // ✅ 파트너십 뉴스 이미지
-    franchise: "/images/press-release.png", // ✅ 프랜차이즈 뉴스 이미지
-    rnd: "/images/roasting-center.jpg", // ✅ R&D 뉴스 이미지 (로스팅 센터 이미지 사용)
+    partnership: "/images/pr-cj-logistics.png", // ✅ 파트너십 뉴스 이미지 (새 CJ 로지스틱스 이미지)
+    franchise: "/images/pr-franchise-news.png", // ✅ 프랜차이즈 뉴스 이미지 (새 보도자료 이미지)
+    rnd: "/images/pr-meeting-presentation.png", // ✅ R&D 뉴스 이미지 (새 미팅 프레젠테이션 이미지)
   };
 
   const newsItems = [

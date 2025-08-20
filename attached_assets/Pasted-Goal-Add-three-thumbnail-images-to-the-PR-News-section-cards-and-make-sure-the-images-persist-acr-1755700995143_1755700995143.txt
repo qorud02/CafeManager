@@ -1,0 +1,112 @@
+Goal
+
+Add three thumbnail images to the PR · News section cards and make sure the images persist across redeploys (use /public), render responsively, and pass Lighthouse checks.
+
+Assets
+
+Move these three images from attached_assets/ to public/pr/ and rename them:
+
+attached_assets/*global-coffee-meeting*.png → public/pr/pr-01-partnership.jpg
+
+attached_assets/*everyday-special*.png → public/pr/pr-02-franchise-plan.jpg
+
+attached_assets/*CJ*_logistics*.png → public/pr/pr-03-cj-logistics.jpg
+
+If exact names differ, pick the closest matches from attached_assets/ (the files show a meeting-room presentation, a woman with a cup in the city, and a CJ Logistics blue truck). Keep the originals and also generate WebP versions:
+
+Create WebP copies: pr-01-partnership.webp, pr-02-franchise-plan.webp, pr-03-cj-logistics.webp (quality ~85).
+
+Component update
+
+Find the component that renders the PR · News cards (likely components/NewsCard.tsx or similar; otherwise search for the heading text “PR · News”).
+
+Update it to accept imageSrc and imageAlt props and render with next/image using a fixed 3:2 aspect ratio.
+
+Patch example:
+
+// NewsCard.tsx
+import Image from "next/image";
+
+type Props = {
+  title: string;
+  category: string;
+  date: string;
+  excerpt: string;
+  href: string;
+  imageSrc: string;   // new
+  imageAlt: string;   // new
+};
+
+export default function NewsCard({
+  title, category, date, excerpt, href, imageSrc, imageAlt
+}: Props) {
+  return (
+    <article className="rounded-2xl shadow-sm bg-white overflow-hidden">
+      <a href={href} className="block">
+        <div className="relative aspect-[3/2] bg-gray-100">
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover"
+            priority={false}
+          />
+        </div>
+        {/* the rest of the card (title, meta, excerpt) stays the same */}
+      </a>
+    </article>
+  );
+}
+
+Page wiring
+
+Locate where the three cards are instantiated (e.g., app/page.tsx or app/(site)/news.tsx). Pass the new props:
+
+<NewsCard
+  title="신규 파트너십 체결 소식"
+  category="기업뉴스"
+  date="2024.03.10"
+  excerpt="대형 물류업체와의 전략적 파트너십을 통한 공급망 혁신…"
+  href="/news/partner-announce"
+  imageSrc="/pr/pr-01-partnership.webp"
+  imageAlt="프레젠테이션 화면 앞에서 발표 중인 유니컵컴퍼니 팀"
+/>
+
+<NewsCard
+  title="프랜차이즈 확장 계획 발표"
+  category="보도자료"
+  date="2024.03.15"
+  excerpt="유니컵컴퍼니의 2024 확장 계획과 가맹 전략 발표…"
+  href="/news/franchise-plan"
+  imageSrc="/pr/pr-02-franchise-plan.webp"
+  imageAlt="도심을 배경으로 유니컵 커피를 든 여성 모델"
+/>
+
+<NewsCard
+  title="신규 물류 파트너십 — 주 6회 배송"
+  category="혁신"
+  date="2024.03.05"
+  excerpt="CJ 물류 협력으로 가맹점 대상 주 6회 정규 배송 체계 구축…"
+  href="/news/cj-logistics"
+  imageSrc="/pr/pr-03-cj-logistics.webp"
+  imageAlt="CJ 로지스틱스 파란 트럭"
+/>
+
+Config & checks
+
+Do not use attached_assets/ paths in JSX. Only use /public URLs like /pr/….
+
+No external domains are needed; keep next.config.ts images config default. If an image domain setting exists, leave it; we’re serving local assets.
+
+Run build and preview. Confirm that:
+
+/pr/pr-01-partnership.webp etc. return 200 in the Network tab.
+
+The three placeholders no longer show and images are visible after Redeploy.
+
+Commit
+
+Create a single commit:
+
+feat(news): add persistent PR thumbnails via /public and wire to PR · News cards
