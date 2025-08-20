@@ -28,7 +28,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm">
               <p>상호: 주식회사 유니컵컴퍼니</p>
               <p>사업자등록번호: 000-00-00000</p>
-              <p>주소: 서울특별시 강남구 테헤란로 XXX</p>
+              <p>주소: 서울 중구 퇴계로 450 9층</p>
               <p>대표전화: 02-0000-0000</p>
               <p>이메일: info@unicupcompany.com</p>
             </div>
