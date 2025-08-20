@@ -16,13 +16,14 @@ export default function Footer() {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 mr-3">
-                <img
-                  src="/images/logo-uc-company.png"
-                  alt="유니컵컴퍼니 로고"
-                  className="h-8 w-auto mix-blend-multiply"
-                />
-              </div>
+              <img
+                src="/images/logo-uc-company.png"
+                alt="유니컵컴퍼니 로고"
+                className="h-8 w-auto mr-3"
+                style={{
+                  filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(0deg) brightness(100%) contrast(100%)',
+                }}
+              />
               <span className="text-xl font-bold text-white">유니컵컴퍼니</span>
             </div>
             <div className="space-y-2 text-sm">
