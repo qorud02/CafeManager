@@ -1,0 +1,210 @@
+Replit 웹사이트 생성용 마스터 프롬프트 (유니컵컴퍼니)
+
+역할
+당신은 “프랜차이즈 본사/식음료 테크 법인”의 코퍼레이트 웹사이트를 제작하는 시니어 프론트엔드 개발자이자 아트디렉터입니다. 결과물은 정적 배포가 가능한 React(Vite) + Tailwind CSS 기반 단일 리포지토리로 완성합니다. 코드는 깔끔한 컴포넌트 구조, 접근성(ARIA), SEO/OG 메타, 모바일 퍼스트를 기본으로 합니다.
+
+1) 프로젝트 설정
+
+Stack: React + Vite + Tailwind CSS + TypeScript
+
+폴더:
+
+/public/images (아래 자산 업로드)
+
+/src/components, /src/sections, /src/styles
+
+라우팅: 랜딩(홈) /, 소개 /about, 사업영역 /business, PR/뉴스 /news, 문의 /contact
+
+글꼴: Pretendard(한글 본문), Inter(영문 UI). Google Fonts 혹은 CDN 사용.
+
+컬러(브랜드 블루 기반):
+
+--uc-blue: #1F3B83
+
+--uc-deep: #0D1220
+
+--uc-gray: #8A93A6
+
+--uc-bg: #0B0E14 (히어로/푸터 다크톤)
+
+--uc-accent: #29A3FF (하이라이트 라인)
+
+다크한 프리미엄 톤, 여백 넓게, 라운드 14–16px, 카드 섀도우 절제.
+
+2) 자산(이미지) 매핑 – 파일명 그대로 사용
+
+다음 파일들을 /public/images에 업로드했다고 가정하고 코드에서 참조하세요.
+
+factory.jpg → (제공: KakaoTalk_20250223_130325691_02.jpg)
+
+boardroom-uc.jpg → (제공: nano-banana_Model___Nanobanana_피 (1).png)
+
+meeting.jpg → (제공: nano-banana_Model___nano-banana_ (1).png)
+
+slogan.jpg → (제공: 보도자료 1200x800.png)
+
+logo-uc-company.png → (제공: Gemini_Generated_Image_tbmyintbmyintbmy.png)
+
+logo-unicup-coffee.png → (제공: BRAND-IDENTITY-[unicup-coffee]-_-0524.png)
+
+store-front.jpg → (제공: 유니컵커피 매장외관.jpg)
+
+모든 이미지에 대체텍스트(alt)를 정확히 지정하고, 용량은 빌드시 자동 최적화하거나 1920px 폭으로 리사이즈합니다.
+
+3) 정보구조(IA) & 섹션 상세
+A. Hero (홈 상단)
+
+배경: slogan.jpg(블러 약하게) 위에 다크 오버레이.
+
+좌측 헤드라인:
+
+한글: “유니컵컴퍼니 – F&B에 ‘프리미엄 효율’을 더하다”
+
+서브: “합리적 가격과 프리미엄 감성의 운영 표준을 만드는 프랜차이즈 본사”
+
+CTA 2개: 가맹/제휴 문의, 회사 소개서(PDF) 다운로드(더미 링크)
+
+우측에 logo-uc-company.png를 미묘한 모션 페이드인.
+
+B. Credibility Strip (로고/스탯)
+
+로고 2개 좌우 배치: logo-uc-company.png, logo-unicup-coffee.png
+
+핵심 수치 카드(더미 값 텍스트만):
+
+월 방문 15만+ / HQ O2O 운영 / 품질 KPI 실측 운영
+
+C. About UC (회사 소개)
+
+좌측 이미지 boardroom-uc.jpg, 우측 텍스트 블록
+
+본문(요약):
+
+“유니컵커피 본점에서 검증된 운영·브랜딩·공급망 표준을 기반으로, 가맹 파트너의 빠른 오픈·안정 운영·고객 재방문을 설계합니다.”
+
+슬로건 인용: “당신의 매일을 한층 특별하게”
+
+3 포인트 아이콘 리스트: Speed, Quality, Consistency
+
+D. Business Lines (사업영역)
+
+카드형 3열(모바일 1열):
+
+Franchise HQ – 매뉴얼·교육·메뉴 R&D
+
+Roasting / Production – factory.jpg 배경, “스케일러블 생산 파트너”
+
+Logistics & Ops – “대형 물류사 연동 기반 (주 6회 배송 가능 구조)”(복수 해석 가능 문구로, 실제 계약 전에 과대표현 금지)
+
+E. Case / Gallery
+
+store-front.jpg, meeting.jpg 등 3~4장 그리드. 캡션에 “브랜드 일관성” 메시지.
+
+F. PR / News
+
+카드 3개 더미. 나중에 노션/블로그 RSS 붙이기 쉽게 구성.
+
+G. CTA – Partnership
+
+다크 섹션. 카피:
+
+“표준을 먼저 만든 뒤 확장합니다. 지금, 파트너십을 상담하세요.”
+
+버튼: 가맹/제휴 문의, 브랜드 가이드 요청
+
+H. Footer
+
+회사 정보(상호/사업자번호 자리), 링크(About/Business/News/Contact), SNS 아이콘 자리.
+
+OG 메타/파비콘/구조화 데이터 포함.
+
+4) 공통 컴포넌트 & 품질 기준
+
+<Header> 스크롤 고정, active 링크 표시.
+
+<PrimaryButton> / <GhostButton> 재사용.
+
+애니메이션: Framer Motion의 가벼운 페이드/슬라이드만.
+
+반응형: 360/768/1024/1440 브레이크포인트.
+
+접근성: 키보드 포커스 스타일, 명도대비 4.5:1 이상.
+
+SEO: title, meta description, og:image=/images/slogan.jpg, lang="ko", 스키마 Organization.
+
+5) 카피(초안 텍스트 – 코드에 포함)
+
+헤드라인: “유니컵컴퍼니 – 합리적인 프리미엄을 표준화하다”
+
+서브: “매뉴얼·품질·공급망을 한 화면에서 설계하는 프랜차이즈 본사”
+
+사업 카드 문구는 간결/정확. 과장 금지. 물류는 “연동 구조 검토 중”으로 단정 서술 피함.
+
+CTA 버튼: “가맹/제휴 문의하기”
+
+6) 문의 폼(스팸 대비)
+
+필드: 성함/회사·점포/연락처/이메일/관심분야(가맹·제휴·공급)/메시지
+
+Replit 환경변수로 Formspree 등 엔드포인트 분리. 제출 시 토스트 알림.
+
+7) 코드 산출 요구
+
+실행 가능한 전체 코드 생성: index.html 대신 Vite 구조.
+
+tailwind.config.js, postcss.config.js, src/main.tsx, src/App.tsx 등 포함.
+
+모든 섹션은 독립 파일(src/sections/Hero.tsx 등).
+
+이미지 경로는 /images/... 정적 참조.
+
+README에 배포 방법(Replit/Netlify), 이미지 교체 가이드 기재.
+
+8) 스타일 지침(디자인)
+
+히어로: 대형 타이포(48/32/24), 레터스페이싱 -1%.
+
+카드: 라운드 xl, 보더 1px #1e293b, 호버 시 미세 상승.
+
+얇은 하이라이트 라인(2px) --uc-accent를 섹션 헤더 아래에.
+
+9) 리스크 문구(법무/과장 방지)
+
+물류 관련 표기는 “연동 가능 구조 검토 중/파트너십 체결 후 적용”으로 처리.
+
+생산/로스팅 이미지는 예시임을 alt/캡션에 명시.
+
+10) 산출 후 체크리스트
+
+Lighthouse 90점 이상(Performance/SEO/Access).
+
+모바일 360px에서 접힘/깨짐 없음.
+
+모든 이미지에 의미 있는 alt.
+
+404 라우트 제공.
+
+샘플 네비 구조
+
+Home | About | Business | News | Contact | (CTA 버튼: 파란색)
+
+출력 형식: 전체 폴더/파일을 한 번에 생성 가능한 코드와 README를 함께 출력. 더미 텍스트는 위 카피 사용. 이미지 경로는 /public/images/ 기준으로 하드코딩.
+
+(필수) 이미지 파일명 그대로 쓸 것
+/public/images/factory.jpg
+/public/images/boardroom-uc.jpg
+/public/images/meeting.jpg
+/public/images/slogan.jpg
+/public/images/logo-uc-company.png
+/public/images/logo-unicup-coffee.png
+/public/images/store-front.jpg
+
+추가 메모(실행 전에 확인)
+
+실제 물류 파트너 계약 체결 전에는 ‘주 6회 배송’ 같은 확정 표현은 절대 금지입니다.
+
+PR/News는 빈 카드로 두고, 실제 기사/보도자료 연결 후 공개하세요.
+
+문의 폼 스팸 차단(허니팟/간단 캡차) 꼭 넣으세요.
+
+필요하면 위 프롬프트의 “Stack”을 Next.js로 바꾸고, /app 라우터 + 메타/OG 자동화만 교체하면 됩니다. 원하시면 바로 Next.js 버전도 만들어 드리겠습니다.
