@@ -22,7 +22,7 @@ export default function PRNews() {
       excerpt: "대형 물류업체와의 전략적 파트너십을 통한 공급망 혁신...",
       date: "2024.03.10",
       gradient: "from-uc-deep to-uc-blue",
-      image: null, // 이미지 경로를 여기에 추가하세요
+      image: "/images/cj-logistics-partnership.png",
     },
     {
       icon: Lightbulb,
