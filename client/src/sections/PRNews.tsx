@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { FileText, DollarSign, Lightbulb } from "lucide-react";
 
+import _____1200x800 from "@assets/보도자료 1200x800.png";
+
 export default function PRNews() {
   const newsItems = [
     {
@@ -61,7 +63,7 @@ export default function PRNews() {
                 >
                   {item.image ? (
                     <img
-                      src={item.image}
+                      src={_____1200x800}
                       alt={item.title}
                       className="w-full h-full object-cover"
                     />
