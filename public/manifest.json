@@ -1,0 +1,53 @@
+{
+  "name": "유니컵컴퍼니 - UniCup Company",
+  "short_name": "유니컵컴퍼니",
+  "description": "F&B에 프리미엄 효율을 더하는 프랜차이즈 본사",
+  "theme_color": "#1F3B83",
+  "background_color": "#1F3B83",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "/images/logo-uc-company.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo-uc-company.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "food", "franchise"],
+  "shortcuts": [
+    {
+      "name": "가맹문의",
+      "short_name": "가맹문의",
+      "description": "프랜차이즈 가맹 문의하기",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "/images/logo-uc-company.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "사업영역",
+      "short_name": "사업영역",
+      "description": "유니컵컴퍼니 사업영역 보기",
+      "url": "/business",
+      "icons": [
+        {
+          "src": "/images/logo-uc-company.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

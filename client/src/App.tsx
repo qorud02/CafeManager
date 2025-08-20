@@ -9,7 +9,8 @@ import About from "@/pages/About";
 import Business from "@/pages/Business";
 import News from "@/pages/News";
 import Contact from "@/pages/Contact";
-import Layout from "@/components/Layout";
+import Layout from "./components/Layout";
+import InstallPWA from "./components/InstallPWA";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
         <Route path="/contact" component={Contact} />
         <Route component={NotFound} />
       </Switch>
+      <InstallPWA />
     </Layout>
   );
 }
