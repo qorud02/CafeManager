@@ -20,9 +20,6 @@ export default function Footer() {
                 src="/images/logo-uc-company.png"
                 alt="유니컵컴퍼니 로고"
                 className="h-8 w-auto mr-3"
-                style={{
-                  filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(0deg) brightness(100%) contrast(100%)',
-                }}
               />
               <span className="text-xl font-bold text-white">유니컵컴퍼니</span>
             </div>
