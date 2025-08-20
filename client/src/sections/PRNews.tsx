@@ -72,11 +72,7 @@ export default function PRNews() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
               >
-                <div
-                  className={`h-48 bg-gradient-to-br ${item.gradient} relative overflow-hidden`}
-                >
-                  
-                </div>
+                
                 <div className="p-6">
                   <div className="text-sm text-uc-accent mb-2">
                     {item.category}
