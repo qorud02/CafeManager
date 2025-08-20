@@ -75,17 +75,9 @@ export default function PRNews() {
                 <div
                   className={`h-48 bg-gradient-to-br ${item.gradient} relative overflow-hidden`}
                 >
-                  {item.image ? (
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <IconComponent className="w-12 h-12 text-white/70" />
-                    </div>
-                  )}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <IconComponent className="w-12 h-12 text-white/70" />
+                  </div>
                 </div>
                 <div className="p-6">
                   <div className="text-sm text-uc-accent mb-2">
