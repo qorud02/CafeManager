@@ -3,6 +3,8 @@ import { FileText, DollarSign, Lightbulb } from "lucide-react";
 
 import CJ_CJ__1755670806397 from "@assets/CJ_CJ_-1755670806397.png";
 
+import _____1200x800 from "@assets/보도자료 1200x800.png";
+
 export default function PRNews() {
   const newsItems = [
     {
@@ -65,7 +67,7 @@ export default function PRNews() {
                 >
                   {item.image ? (
                     <img
-                      src={CJ_CJ__1755670806397}
+                      src={_____1200x800}
                       alt={item.title}
                       className="w-full h-full object-cover"
                     />
