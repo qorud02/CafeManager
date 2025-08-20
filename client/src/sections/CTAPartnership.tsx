@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function CTAPartnership() {
   return (
     <section className="py-20 bg-uc-bg relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-uc-deep to-uc-blue opacity-90"></div>
+      <div className="absolute inset-0 from-uc-deep to-uc-blue opacity-90 bg-[#0d143bed]"></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -34,7 +34,6 @@ export default function CTAPartnership() {
           </div>
         </motion.div>
       </div>
-
       {/* Background decoration */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-uc-accent/10 rounded-full blur-3xl animate-float"></div>
       <div
