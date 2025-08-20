@@ -1,0 +1,136 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* UniCup Brand Colors */
+  --uc-blue: hsl(221, 63%, 31%);
+  --uc-deep: hsl(221, 64%, 8%);
+  --uc-gray: hsl(221, 12%, 59%);
+  --uc-bg: hsl(221, 57%, 7%);
+  --uc-accent: hsl(203, 100%, 58%);
+  
+  /* Base Colors */
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(221, 64%, 8%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(221, 64%, 8%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(221, 64%, 8%);
+  --primary: hsl(221, 63%, 31%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(221, 12%, 95%);
+  --secondary-foreground: hsl(221, 64%, 8%);
+  --muted: hsl(221, 12%, 95%);
+  --muted-foreground: hsl(221, 12%, 59%);
+  --accent: hsl(203, 100%, 58%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(221, 13%, 91%);
+  --input: hsl(221, 13%, 91%);
+  --ring: hsl(203, 100%, 58%);
+  --radius: 1rem;
+  
+  /* Font families */
+  --font-pretendard: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+}
+
+.dark {
+  --background: hsl(221, 57%, 7%);
+  --foreground: hsl(0, 0%, 95%);
+  --card: hsl(221, 64%, 8%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --popover: hsl(221, 57%, 7%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --primary: hsl(203, 100%, 58%);
+  --primary-foreground: hsl(221, 64%, 8%);
+  --secondary: hsl(221, 12%, 15%);
+  --secondary-foreground: hsl(0, 0%, 95%);
+  --muted: hsl(221, 12%, 15%);
+  --muted-foreground: hsl(221, 12%, 59%);
+  --accent: hsl(203, 100%, 58%);
+  --accent-foreground: hsl(221, 64%, 8%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(0, 0%, 95%);
+  --border: hsl(221, 12%, 15%);
+  --input: hsl(221, 12%, 15%);
+  --ring: hsl(203, 100%, 58%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-pretendard);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-pretendard);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+}
+
+@layer utilities {
+  .hero-bg {
+    background: linear-gradient(rgba(11, 14, 20, 0.8), rgba(31, 59, 131, 0.6)), url('/images/slogan.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px); 
+    }
+    50% { 
+      transform: translateY(-10px); 
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(40px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+}
