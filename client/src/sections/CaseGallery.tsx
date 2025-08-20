@@ -7,9 +7,9 @@ export default function CaseGallery() {
   // 3. 품질 관리: 품질 관리 관련 이미지를 customImage2에 추가
   
   const customImages = {
-    store: "/images/unicup-store-front.jpg", // ✅ 매장 표준화 - 실제 매장 이미지
-    partnership: "/images/cj-logistics-partnership.png", // ✅ 파트너십 - CJ 로지스틱스 파트너십 이미지
-    quality: "/images/roasting-center.jpg", // ✅ 품질 관리 - 로스팅 센터 이미지
+    store: null, // ❌ 매장 표준화 이미지 삭제됨
+    partnership: null, // ❌ 파트너십 이미지 삭제됨
+    quality: null, // ❌ 품질 관리 이미지 삭제됨
   };
 
   const cases = [
