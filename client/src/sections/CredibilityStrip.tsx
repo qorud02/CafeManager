@@ -15,7 +15,7 @@ export default function CredibilityStrip() {
             <img
               src="/images/logo-uc-company.png"
               alt="유니컵컴퍼니 법인 로고"
-              className="h-16 mr-8"
+              className="h-32 mr-8"
             />
             <img
               src={BRAND_IDENTITY__unicup_coffee____0524}
