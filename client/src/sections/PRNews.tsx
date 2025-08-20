@@ -1,32 +1,28 @@
 import { motion } from "framer-motion";
-import { FileText, DollarSign, Lightbulb } from "lucide-react";
 
 export default function PRNews() {
   const newsItems = [
     {
-      icon: FileText,
+      image: "/images/press-release-1.png",
       category: "보도자료",
       title: "프랜차이즈 확장 계획 발표",
       excerpt:
         "유니컵컴퍼니의 새로운 프랜차이즈 전략과 2024년 확장 계획에 대한...",
       date: "2024.03.15",
-      gradient: "from-uc-blue to-uc-accent",
     },
     {
-      icon: DollarSign,
+      image: "/images/boardroom-uc.jpg",
       category: "기업뉴스",
       title: "신규 파트너십 체결 소식",
       excerpt: "대형 물류업체와의 전략적 파트너십을 통한 공급망 혁신...",
       date: "2024.03.10",
-      gradient: "from-uc-deep to-uc-blue",
     },
     {
-      icon: Lightbulb,
+      image: "/images/meeting.jpg",
       category: "혁신",
       title: "신메뉴 R&D 성과 발표",
       excerpt: "고객 만족도 극대화를 위한 신메뉴 개발 및 표준화 과정...",
       date: "2024.03.05",
-      gradient: "from-uc-accent to-uc-blue",
     },
   ];
 
@@ -45,7 +41,6 @@ export default function PRNews() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {newsItems.map((item, index) => {
-            const IconComponent = item.icon;
             return (
               <motion.article
                 key={index}
@@ -55,12 +50,13 @@ export default function PRNews() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
               >
-                <div
-                  className={`h-48 bg-gradient-to-br ${item.gradient} relative`}
-                >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <IconComponent className="w-12 h-12 text-white/70" />
-                  </div>
+                <div className="h-48 relative overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                 </div>
                 <div className="p-6">
                   <div className="text-sm text-uc-accent mb-2">
