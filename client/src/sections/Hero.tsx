@@ -18,7 +18,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-block bg-uc-accent/10 text-uc-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-block bg-uc-accent/10 px-4 py-2 rounded-full text-sm font-medium mb-6 text-[#344570]">
               프랜차이즈 본사 · 식음료 테크 법인
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
