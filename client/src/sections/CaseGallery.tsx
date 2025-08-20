@@ -60,13 +60,15 @@ export default function CaseGallery() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-32"
             >
-              <img
-                src={caseItem.image || caseItem.fallbackImage}
-                alt={caseItem.alt}
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
+              {(caseItem.image || caseItem.fallbackImage) && (
+                <img
+                  src={(caseItem.image || caseItem.fallbackImage) as string}
+                  alt={caseItem.alt}
+                  className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                 <div className="p-6 text-white">
                   <h3 className="text-lg font-semibold mb-1">
