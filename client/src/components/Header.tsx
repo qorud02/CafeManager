@@ -40,6 +40,11 @@ export default function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
+              <img
+                src="/images/logo-uc-company.png"
+                alt="유니컵컴퍼니 로고"
+                className="h-8 w-auto"
+              />
             </Link>
           </div>
 

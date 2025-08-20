@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { Zap, CheckCircle, Heart } from "lucide-react";
 
-import nano_banana_Model___Nanobanana____1_ from "@assets/nano-banana_Model___Nanobanana_피 (1).png";
-
 export default function AboutUC() {
   const features = [
     {
@@ -34,7 +32,7 @@ export default function AboutUC() {
             viewport={{ once: true }}
           >
             <img
-              src={nano_banana_Model___Nanobanana____1_}
+              src="/images/boardroom-uc.jpg"
               alt="유니컵컴퍼니 임원진 회의실 - 전략 기획 및 의사결정 현장"
               className="rounded-2xl shadow-2xl w-full"
             />
