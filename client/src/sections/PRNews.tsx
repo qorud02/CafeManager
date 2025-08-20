@@ -67,7 +67,7 @@ export default function PRNews() {
                 >
                   {item.image ? (
                     <img
-                      src={CJ_CJ__1755670806397}
+                      src={_____1200x800}
                       alt={item.title}
                       className="w-full h-full object-cover"
                     />
