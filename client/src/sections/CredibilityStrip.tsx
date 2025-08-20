@@ -1,5 +1,6 @@
 import BRAND_IDENTITY__unicup_coffee____0524 from "@assets/BRAND-IDENTITY-[unicup-coffee]-_-0524.png";
 import Gemini_Generated_Image_tbmyintbmyintbmy______ from "@assets/Gemini_Generated_Image_tbmyintbmyintbmy - 편집함.png";
+import ____ from "@assets/다운로드.png";
 export default function CredibilityStrip() {
   const stats = [
     { value: "월 15만+", label: "방문 고객" },
@@ -19,7 +20,7 @@ export default function CredibilityStrip() {
               className="h-32 mr-8"
             />
             <img
-              src={BRAND_IDENTITY__unicup_coffee____0524}
+              src={____}
               alt="유니컵커피 브랜드 로고"
               className="h-32"
             />
