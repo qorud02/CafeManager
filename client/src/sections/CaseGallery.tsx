@@ -27,7 +27,7 @@ export default function CaseGallery() {
       title: "파트너십",
       subtitle: "협업을 통한 성장",
       alt: "유니컵컴퍼니 파트너십 - 프랜차이즈 운영 및 협업 관계",
-      fallbackImage: "/images/meeting.jpg",
+      fallbackImage: null, // ❌ 유니컵컴퍼니 파트너십 이미지 완전 삭제됨
     },
     {
       id: "quality",
@@ -35,7 +35,7 @@ export default function CaseGallery() {
       title: "품질 관리",
       subtitle: "생산 표준화",
       alt: "유니컵컴퍼니 품질 관리 - 표준화된 생산 및 품질 시스템",
-      fallbackImage: "/images/factory.jpg",
+      fallbackImage: null, // ❌ 유니컵컴퍼니 품질 관리 이미지 완전 삭제됨
     },
   ];
 
