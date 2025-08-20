@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import ContactModal from "../components/ContactModal";
 
 import Gemini_Generated_Image_tbmyintbmyintbmy______ from "@assets/Gemini_Generated_Image_tbmyintbmyintbmy - 편집함.png";
 
 export default function Hero() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   return (
     <section className="hero-bg min-h-screen flex items-center relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -27,7 +30,10 @@ export default function Hero() {
               합리적 가격과 프리미엄 감성의 운영 표준을 만드는 프랜차이즈 본사
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-uc-blue text-white px-8 py-4 rounded-2xl hover:bg-uc-deep transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <Button 
+                onClick={() => setIsContactModalOpen(true)}
+                className="bg-uc-blue text-white px-8 py-4 rounded-2xl hover:bg-uc-deep transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
                 가맹·제휴 문의하기
               </Button>
               <Button
@@ -64,6 +70,11 @@ export default function Hero() {
       >
         <ChevronDown className="w-6 h-6 text-white" />
       </motion.div>
+      
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </section>
   );
 }
