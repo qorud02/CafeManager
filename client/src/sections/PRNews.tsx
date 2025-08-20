@@ -22,6 +22,7 @@ export default function PRNews() {
       excerpt: "대형 물류업체와의 전략적 파트너십을 통한 공급망 혁신...",
       date: "2024.03.10",
       gradient: "from-uc-deep to-uc-blue",
+      image: null, // 이미지 경로를 여기에 추가하세요
     },
     {
       icon: Lightbulb,
@@ -30,6 +31,7 @@ export default function PRNews() {
       excerpt: "고객 만족도 극대화를 위한 신메뉴 개발 및 표준화 과정...",
       date: "2024.03.05",
       gradient: "from-uc-accent to-uc-blue",
+      image: null, // 이미지 경로를 여기에 추가하세요
     },
   ];
 
