@@ -101,19 +101,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
         이 메일은 유니컵컴퍼니 웹사이트를 통해 자동으로 발송되었습니다.
       `;
 
-      // Send email to official@unicupcoffee.com
-      const emailSent = await sendEmail({
-        to: "official@unicupcoffee.com",
-        from: "noreply@unicupcoffee.com", // This should be a verified sender in SendGrid
-        subject: emailSubject,
-        text: emailText,
-        html: emailHtml
-      });
-
-      if (emailSent) {
-        res.json({ success: true, message: "문의가 성공적으로 전송되었습니다." });
+      // 개발 환경에서는 이메일 전송 시뮬레이션
+      if (process.env.NODE_ENV === 'development') {
+        // 개발 환경에서는 콘솔에 이메일 내용 출력
+        console.log('=== 📧 이메일 전송 시뮬레이션 ===');
+        console.log('To:', 'official@unicupcoffee.com');
+        console.log('Subject:', emailSubject);
+        console.log('Content:');
+        console.log(emailText);
+        console.log('================================');
+        
+        res.json({ 
+          success: true, 
+          message: "문의가 성공적으로 전송되었습니다. (개발 환경)" 
+        });
       } else {
-        res.status(500).json({ error: "이메일 전송에 실패했습니다." });
+        // 프로덕션 환경에서만 실제 이메일 전송
+        const emailSent = await sendEmail({
+          to: "official@unicupcoffee.com",
+          from: "noreply@unicupcoffee.com", // This should be a verified sender in SendGrid
+          subject: emailSubject,
+          text: emailText,
+          html: emailHtml
+        });
+
+        if (emailSent) {
+          res.json({ success: true, message: "문의가 성공적으로 전송되었습니다." });
+        } else {
+          res.status(500).json({ error: "이메일 전송에 실패했습니다." });
+        }
       }
     } catch (error) {
       console.error("Contact form error:", error);
