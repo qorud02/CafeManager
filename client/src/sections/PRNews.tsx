@@ -60,32 +60,70 @@ export default function PRNews() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {newsItems.map((item, index) => {
-            const IconComponent = item.icon;
-            return (
-              <motion.article
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
-              >
-                
-                <div className="p-6">
-                  <div className="text-sm text-uc-accent mb-2">
-                    {item.category}
-                  </div>
-                  <h3 className="text-lg font-semibold text-uc-deep mb-3 group-hover:text-uc-blue transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-uc-gray text-sm mb-4">{item.excerpt}</p>
-                  <div className="text-xs text-uc-gray">{item.date}</div>
-                </div>
-              </motion.article>
-            );
-          })}
+        {/* 첫 번째 영역 - 기업뉴스 */}
+        <div className="mb-12">
+          <motion.article
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer max-w-md mx-auto"
+          >
+            <div className="p-6">
+              <div className="text-sm text-uc-accent mb-2">
+                {newsItems[0].category}
+              </div>
+              <h3 className="text-lg font-semibold text-uc-deep mb-3 group-hover:text-uc-blue transition-colors">
+                {newsItems[0].title}
+              </h3>
+              <p className="text-uc-gray text-sm mb-4">{newsItems[0].excerpt}</p>
+              <div className="text-xs text-uc-gray">{newsItems[0].date}</div>
+            </div>
+          </motion.article>
+        </div>
+
+        {/* 두 번째 영역 - 보도자료 */}
+        <div className="mb-12">
+          <motion.article
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer max-w-md mx-auto"
+          >
+            <div className="p-6">
+              <div className="text-sm text-uc-accent mb-2">
+                {newsItems[1].category}
+              </div>
+              <h3 className="text-lg font-semibold text-uc-deep mb-3 group-hover:text-uc-blue transition-colors">
+                {newsItems[1].title}
+              </h3>
+              <p className="text-uc-gray text-sm mb-4">{newsItems[1].excerpt}</p>
+              <div className="text-xs text-uc-gray">{newsItems[1].date}</div>
+            </div>
+          </motion.article>
+        </div>
+
+        {/* 세 번째 영역 - 혁신 */}
+        <div className="mb-12">
+          <motion.article
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer max-w-md mx-auto"
+          >
+            <div className="p-6">
+              <div className="text-sm text-uc-accent mb-2">
+                {newsItems[2].category}
+              </div>
+              <h3 className="text-lg font-semibold text-uc-deep mb-3 group-hover:text-uc-blue transition-colors">
+                {newsItems[2].title}
+              </h3>
+              <p className="text-uc-gray text-sm mb-4">{newsItems[2].excerpt}</p>
+              <div className="text-xs text-uc-gray">{newsItems[2].date}</div>
+            </div>
+          </motion.article>
         </div>
       </div>
     </section>

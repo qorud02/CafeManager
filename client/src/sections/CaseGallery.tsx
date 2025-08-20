@@ -64,7 +64,7 @@ export default function CaseGallery() {
             >
               {(caseItem.image || caseItem.fallbackImage) && (
                 <img
-                  src={(caseItem.image || caseItem.fallbackImage) as string}
+                  src={(caseItem.image || caseItem.fallbackImage) as unknown as string}
                   alt={caseItem.alt}
                   className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
