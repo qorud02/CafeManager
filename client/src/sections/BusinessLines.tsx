@@ -57,9 +57,9 @@ export default function BusinessLines() {
                 {business.hasBackground ? (
                   <div className="bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-700 hover:border-uc-accent backdrop-blur-sm relative">
                     <div
-                      className="h-48 bg-cover bg-center relative"
+                      className="h-16 bg-cover bg-center relative mb-6"
                       style={{
-                        backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${business.backgroundImage}')`,
+                        backgroundImage: `url('${business.backgroundImage}')`,
                       }}
                     >
                     </div>
