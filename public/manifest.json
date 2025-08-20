@@ -11,13 +11,13 @@
   "lang": "ko",
   "icons": [
     {
-      "src": "/images/logo-uc-company.png",
+      "src": "/images/unicup-app-icon.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/images/logo-uc-company.png",
+      "src": "/images/unicup-app-icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -32,7 +32,7 @@
       "url": "/contact",
       "icons": [
         {
-          "src": "/images/logo-uc-company.png",
+          "src": "/images/unicup-app-icon.png",
           "sizes": "96x96"
         }
       ]
@@ -44,7 +44,7 @@
       "url": "/business",
       "icons": [
         {
-          "src": "/images/logo-uc-company.png",
+          "src": "/images/unicup-app-icon.png",
           "sizes": "96x96"
         }
       ]
