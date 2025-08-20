@@ -23,7 +23,7 @@ export default function Hero() {
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               유니컵컴퍼니<br />
-              <span className="text-uc-accent">F&B에 '프리미엄 효율'</span>
+              <span className="text-[49px] text-[#344570]">F&B에 '프리미엄 효율'</span>
               <br />을 더하다
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
@@ -70,7 +70,6 @@ export default function Hero() {
       >
         <ChevronDown className="w-6 h-6 text-white" />
       </motion.div>
-      
       <ContactModal 
         isOpen={isContactModalOpen} 
         onClose={() => setIsContactModalOpen(false)} 
