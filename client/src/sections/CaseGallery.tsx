@@ -67,14 +67,7 @@ export default function CaseGallery() {
                 alt={caseItem.alt}
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                <div className="p-6 text-white">
-                  <h3 className="text-lg font-semibold mb-1">
-                    {caseItem.title}
-                  </h3>
-                  <p className="text-sm opacity-90">{caseItem.subtitle}</p>
-                </div>
-              </div>
+              
             </motion.div>
           ))}
         </div>
