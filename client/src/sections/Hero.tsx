@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import ContactModal from "../components/ContactModal";
+import companyIntroductionPdf from "./companyIntroduction.pdf";
 
 import Gemini_Generated_Image_tbmyintbmyintbmy______ from "@assets/Gemini_Generated_Image_tbmyintbmyintbmy - 편집함.png";
 
@@ -38,8 +39,8 @@ export default function Hero() {
                 className="border-2 border-white text-white px-8 py-4 rounded-2xl hover:bg-white hover:text-uc-deep transition-all duration-300 font-semibold backdrop-blur-sm"
                 onClick={() => {
                   const link = document.createElement("a");
-                  link.href = "src/sections/companyIntroduction.pdf"; // public/assets 경로
-                  link.download = "companyIntroduction.pdf"; // 다운로드 파일명
+                  link.href = companyIntroductionPdf; // import한 변수를 사용
+                  link.download = "companyIntroduction.pdf";
                   document.body.appendChild(link);
                   link.click();
                   document.body.removeChild(link);
