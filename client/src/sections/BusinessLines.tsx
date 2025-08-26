@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { Building2, Settings, Package } from "lucide-react";
+import photo1 from "../sections/photo1.png";
+import photo2 from "../sections/photo2.jpeg";
+import photo3 from "../sections/photo3.png";
 
 export default function BusinessLines() {
   const businessLines = [
@@ -7,14 +10,15 @@ export default function BusinessLines() {
       icon: Building2,
       title: "Franchise HQ",
       description: "매뉴얼·교육·메뉴 R&D를 통한 체계적인 가맹점 지원 시스템",
-      hasBackground: false,
+      hasBackground: true,
+      backgroundImage: photo1, // 교육/회의 이미지
     },
     {
       icon: Settings,
       title: "Roasting / Production",
       description: "스케일러블 생산 파트너로서 안정적인 품질 관리 시스템",
       hasBackground: true,
-      backgroundImage: "/images/factory.jpg",
+      backgroundImage: photo2, // 로스팅 센터 이미지
     },
     {
       icon: Package,
@@ -25,7 +29,8 @@ export default function BusinessLines() {
           <span className="text-sm text-gray-400">(파트너십 체결 후 적용)</span>
         </>
       ),
-      hasBackground: false,
+      hasBackground: true,
+      backgroundImage: photo3, // CJ 물류 트럭 이미지
     },
   ];
 
@@ -52,34 +57,34 @@ export default function BusinessLines() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="group hover:transform hover:-translate-y-2 transition-all duration-300"
+                className="group hover:transform hover:-translate-y-2 transition-all duration-300 h-full"
               >
                 {business.hasBackground ? (
-                  <div className="bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-700 hover:border-uc-accent backdrop-blur-sm relative h-96">
+                  <div className="bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-700 hover:border-uc-accent backdrop-blur-sm h-full flex flex-col">
                     <div
-                      className="h-1/2 bg-cover bg-center relative"
+                      className="h-48 bg-cover bg-center relative flex-shrink-0"
                       style={{
                         backgroundImage: `url('${business.backgroundImage}')`,
                       }}
                     ></div>
-                    <div className="p-8 h-1/2 flex flex-col justify-center">
-                      <h3 className="text-xl font-bold text-white mb-4">
+                    <div className="p-8 flex-grow flex flex-col">
+                      <h3 className="text-xl font-bold text-white mb-4 flex-shrink-0">
                         {business.title}
                       </h3>
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className="text-gray-300 leading-relaxed flex-grow">
                         {business.description}
                       </p>
                     </div>
                   </div>
                 ) : (
-                  <div className="bg-gray-900/50 rounded-2xl p-8 border border-gray-700 hover:border-uc-accent backdrop-blur-sm h-96 flex flex-col justify-center">
-                    <div className="w-16 h-16 bg-uc-blue rounded-2xl flex items-center justify-center mb-6">
+                  <div className="bg-gray-900/50 rounded-2xl p-8 border border-gray-700 hover:border-uc-accent backdrop-blur-sm h-full flex flex-col">
+                    <div className="w-16 h-16 bg-uc-blue rounded-2xl flex items-center justify-center mb-6 flex-shrink-0">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-4">
+                    <h3 className="text-xl font-bold text-white mb-4 flex-shrink-0">
                       {business.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-gray-300 leading-relaxed flex-grow">
                       {business.description}
                     </p>
                   </div>
