@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { FileText, DollarSign, Lightbulb } from "lucide-react";
+import { FileText, DollarSign, Lightbulb, ExternalLink } from "lucide-react";
 
 export default function PRNews() {
   // 📝 PR뉴스 이미지 추가 가이드:
   // 1. 파트너십 뉴스: partnership 이미지 설정됨 ✅
-  // 2. 프랜차이즈 뉴스: franchise 이미지 설정됨 ✅  
+  // 2. 프랜차이즈 뉴스: franchise 이미지 설정됨 ✅
   // 3. R&D 뉴스: rnd 이미지 설정됨 ✅
-  
+
   const customImages = {
     partnership: "/images/pr-cj-logistics.png", // ✅ 파트너십 뉴스 이미지 (새 CJ 로지스틱스 이미지)
     franchise: "/images/pr-franchise-news.png", // ✅ 프랜차이즈 뉴스 이미지 (새 보도자료 이미지)
@@ -19,10 +19,13 @@ export default function PRNews() {
       icon: DollarSign,
       category: "기업뉴스",
       title: "신규 파트너십 체결 소식",
-      excerpt: "대형 물류업체와의 전략적 파트너십을 통한 공급망 혁신...",
-      date: "2024.03.10",
+      excerpt:
+        "친환경 솔루션 전문기업 더그리트와 지속가능한 소비문화를 위한 특별한 업무 협약...",
+      date: "2025.07.27",
       gradient: "from-uc-deep to-uc-blue",
       image: customImages.partnership,
+      link: "https://blog.naver.com/unicupcoffee/223948551432", // 외부 링크
+      external: true,
     },
     {
       id: "franchise",
@@ -30,10 +33,12 @@ export default function PRNews() {
       category: "보도자료",
       title: "프랜차이즈 확장 계획 발표",
       excerpt:
-        "유니컵컴퍼니의 새로운 프랜차이즈 전략과 2024년 확장 계획에 대한...",
-      date: "2024.03.15",
+        "유니컵컴퍼니의 유니컵커피 프랜차이즈 전략과 2025년 확장 계획에 대한...",
+      date: "2025.07.07",
       gradient: "from-uc-blue to-uc-accent",
       image: customImages.franchise,
+      link: "https://www.newswire.co.kr/newsRead.php?no=1014403", // 내부 링크
+      external: true,
     },
     {
       id: "rnd",
@@ -44,8 +49,20 @@ export default function PRNews() {
       date: "2024.03.05",
       gradient: "from-uc-accent to-uc-blue",
       image: customImages.rnd,
+      link: "https://unicupcompany.com/", // 내부 링크
+      external: true,
     },
   ];
+
+  const handleCardClick = (item) => {
+    if (item.external) {
+      // 외부 링크는 새 탭에서 열기
+      window.open(item.link, "_blank", "noopener,noreferrer");
+    } else {
+      // 내부 링크는 현재 탭에서 이동 (React Router 사용시 navigate 사용)
+      window.location.href = item.link;
+    }
+  };
 
   return (
     <section className="py-20 bg-gray-50">
@@ -67,17 +84,25 @@ export default function PRNews() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer transform hover:-translate-y-1"
+            onClick={() => handleCardClick(newsItems[0])}
           >
             <div className="p-6">
-              <div className="text-sm text-uc-accent mb-2">
-                {newsItems[0].category}
+              <div className="text-sm text-uc-accent mb-2 flex items-center justify-between">
+                <span>{newsItems[0].category}</span>
+                {newsItems[0].external && (
+                  <ExternalLink className="w-4 h-4 text-uc-accent/60" />
+                )}
               </div>
               <h3 className="text-lg font-semibold text-uc-deep mb-3 group-hover:text-uc-blue transition-colors">
                 {newsItems[0].title}
               </h3>
-              <p className="text-uc-gray text-sm mb-4">{newsItems[0].excerpt}</p>
-              <div className="text-xs text-uc-gray">{newsItems[0].date}</div>
+              <p className="text-uc-gray text-sm mb-4">
+                {newsItems[0].excerpt}
+              </p>
+              <div className="flex justify-between items-center">
+                <div className="text-xs text-uc-gray">{newsItems[0].date}</div>
+              </div>
             </div>
           </motion.article>
 
@@ -87,17 +112,25 @@ export default function PRNews() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer transform hover:-translate-y-1"
+            onClick={() => handleCardClick(newsItems[1])}
           >
             <div className="p-6">
-              <div className="text-sm text-uc-accent mb-2">
-                {newsItems[1].category}
+              <div className="text-sm text-uc-accent mb-2 flex items-center justify-between">
+                <span>{newsItems[1].category}</span>
+                {newsItems[1].external && (
+                  <ExternalLink className="w-4 h-4 text-uc-accent/60" />
+                )}
               </div>
               <h3 className="text-lg font-semibold text-uc-deep mb-3 group-hover:text-uc-blue transition-colors">
                 {newsItems[1].title}
               </h3>
-              <p className="text-uc-gray text-sm mb-4">{newsItems[1].excerpt}</p>
-              <div className="text-xs text-uc-gray">{newsItems[1].date}</div>
+              <p className="text-uc-gray text-sm mb-4">
+                {newsItems[1].excerpt}
+              </p>
+              <div className="flex justify-between items-center">
+                <div className="text-xs text-uc-gray">{newsItems[1].date}</div>
+              </div>
             </div>
           </motion.article>
 
@@ -107,17 +140,25 @@ export default function PRNews() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer transform hover:-translate-y-1"
+            onClick={() => handleCardClick(newsItems[2])}
           >
             <div className="p-6">
-              <div className="text-sm text-uc-accent mb-2">
-                {newsItems[2].category}
+              <div className="text-sm text-uc-accent mb-2 flex items-center justify-between">
+                <span>{newsItems[2].category}</span>
+                {newsItems[2].external && (
+                  <ExternalLink className="w-4 h-4 text-uc-accent/60" />
+                )}
               </div>
               <h3 className="text-lg font-semibold text-uc-deep mb-3 group-hover:text-uc-blue transition-colors">
                 {newsItems[2].title}
               </h3>
-              <p className="text-uc-gray text-sm mb-4">{newsItems[2].excerpt}</p>
-              <div className="text-xs text-uc-gray">{newsItems[2].date}</div>
+              <p className="text-uc-gray text-sm mb-4">
+                {newsItems[2].excerpt}
+              </p>
+              <div className="flex justify-between items-center">
+                <div className="text-xs text-uc-gray">{newsItems[2].date}</div>
+              </div>
             </div>
           </motion.article>
         </div>
