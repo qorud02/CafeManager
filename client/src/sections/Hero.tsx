@@ -22,23 +22,28 @@ export default function Hero() {
               프랜차이즈 본사 · 식음료 테크 법인
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              유니컵컴퍼니<br />
-              <span className="text-[49px] text-[#344570]">F&B에 '프리미엄 효율'</span>
+              유니컵컴퍼니
+              <br />
+              <span className="text-[49px] text-[#344570]">
+                F&B에 '프리미엄 효율'
+              </span>
               <br />을 더하다
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
               합리적 가격과 프리미엄 감성의 운영 표준을 만드는 프랜차이즈 본사
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                onClick={() => setIsContactModalOpen(true)}
-                className="bg-uc-blue text-white px-8 py-4 rounded-2xl hover:bg-uc-deep transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                가맹·제휴 문의하기
-              </Button>
               <Button
                 variant="outline"
                 className="border-2 border-white text-white px-8 py-4 rounded-2xl hover:bg-white hover:text-uc-deep transition-all duration-300 font-semibold backdrop-blur-sm"
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "src/sections/companyIntroduction.pdf"; // public/assets 경로
+                  link.download = "companyIntroduction.pdf"; // 다운로드 파일명
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
               >
                 회사소개서 다운로드
               </Button>
@@ -70,9 +75,9 @@ export default function Hero() {
       >
         <ChevronDown className="w-6 h-6 text-white" />
       </motion.div>
-      <ContactModal 
-        isOpen={isContactModalOpen} 
-        onClose={() => setIsContactModalOpen(false)} 
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
       />
     </section>
   );
