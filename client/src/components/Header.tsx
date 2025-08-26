@@ -39,8 +39,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/">
-            </Link>
+            <Link href="/"></Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -58,7 +57,8 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
-            <Button className="bg-uc-blue text-white px-6 py-2 rounded-full hover:bg-uc-deep transition-colors duration-300 font-medium">
+
+            <Button className="bg-gray-500 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition-colors duration-300 font-medium">
               파트너십 문의
             </Button>
           </div>

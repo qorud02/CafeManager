@@ -8,14 +8,14 @@ export default function BusinessLines() {
       title: "Franchise HQ",
       description: "매뉴얼·교육·메뉴 R&D를 통한 체계적인 가맹점 지원 시스템",
       hasBackground: true,
-      backgroundImage: "/images/meeting.jpg", // 교육/회의 이미지
+      backgroundImage: "src/sections/photo1.png", // 교육/회의 이미지
     },
     {
       icon: Settings,
       title: "Roasting / Production",
       description: "스케일러블 생산 파트너로서 안정적인 품질 관리 시스템",
       hasBackground: true,
-      backgroundImage: "/images/roasting-center.jpg", // 로스팅 센터 이미지
+      backgroundImage: "src/sections/photo2.jpeg", // 로스팅 센터 이미지
     },
     {
       icon: Package,
@@ -27,7 +27,7 @@ export default function BusinessLines() {
         </>
       ),
       hasBackground: true,
-      backgroundImage: "/images/cj-logistics-partnership.png", // CJ 물류 트럭 이미지
+      backgroundImage: "src/sections/photo3.png", // CJ 물류 트럭 이미지
     },
   ];
 
@@ -59,12 +59,11 @@ export default function BusinessLines() {
                 {business.hasBackground ? (
                   <div className="bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-700 hover:border-uc-accent backdrop-blur-sm relative">
                     <div
-                      className="h-16 bg-cover bg-center relative mb-6"
+                      className="h-48 bg-cover bg-center relative mb-6"
                       style={{
                         backgroundImage: `url('${business.backgroundImage}')`,
                       }}
-                    >
-                    </div>
+                    ></div>
                     <div className="p-8">
                       <h3 className="text-xl font-bold text-white mb-4">
                         {business.title}

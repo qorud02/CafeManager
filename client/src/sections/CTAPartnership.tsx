@@ -25,12 +25,6 @@ export default function CTAPartnership() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button 
-              onClick={() => setIsContactModalOpen(true)}
-              className="bg-uc-accent text-white px-10 py-4 rounded-2xl hover:bg-white hover:text-uc-accent transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            >
-              가맹·제휴 문의하기
-            </Button>
             <Button
               variant="outline"
               className="border-2 border-white text-white px-10 py-4 rounded-2xl hover:bg-white hover:text-uc-deep transition-all duration-300 font-bold text-lg backdrop-blur-sm"
@@ -46,10 +40,10 @@ export default function CTAPartnership() {
         className="absolute bottom-10 left-10 w-48 h-48 bg-white/5 rounded-full blur-3xl animate-float"
         style={{ animationDelay: "1s" }}
       ></div>
-      
-      <ContactModal 
-        isOpen={isContactModalOpen} 
-        onClose={() => setIsContactModalOpen(false)} 
+
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
       />
     </section>
   );

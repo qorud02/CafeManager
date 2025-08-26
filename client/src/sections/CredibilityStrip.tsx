@@ -3,7 +3,6 @@ import Gemini_Generated_Image_tbmyintbmyintbmy______ from "@assets/Gemini_Genera
 import ____ from "@assets/다운로드.png";
 export default function CredibilityStrip() {
   const stats = [
-    { value: "48%+", label: "재방문율" },
     { value: "HQ O2O", label: "운영 시스템" },
     { value: "품질 KPI", label: "실측 운영" },
   ];
@@ -19,11 +18,7 @@ export default function CredibilityStrip() {
               alt="유니컵컴퍼니 법인 로고"
               className="h-32 mr-8"
             />
-            <img
-              src={____}
-              alt="유니컵커피 브랜드 로고"
-              className="h-32"
-            />
+            <img src={____} alt="유니컵커피 브랜드 로고" className="h-32" />
           </div>
 
           {/* Key Stats */}

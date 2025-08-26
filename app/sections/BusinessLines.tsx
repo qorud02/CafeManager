@@ -5,7 +5,7 @@ export default function BusinessLines() {
   const businessLines = [
     {
       icon: Building2,
-      title: "Franchise HQ",
+      title: "Franchise H",
       description: "매뉴얼·교육·메뉴 R&D를 통한 체계적인 가맹점 지원 시스템",
       hasBackground: false,
     },
