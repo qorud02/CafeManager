@@ -15,17 +15,16 @@ export default function Home() {
       <BusinessLines />
       <CaseGallery />
       <PRNews />
-      {/* 구글 지도 임베드 */}
-      <div className="w-full h-[400px]">
+      {/* 구글 지도 임베드 https://www.google.com/mymaps에서 수정 */}
+      <div className="bg-gray-50">
+        <h2 className="text-3xl md:text-4xl font-bold text-uc-deep mb-10 text-center">
+          찾아오시는길
+        </h2>
         <iframe
-          src={`https://www.google.com/maps?q=${35.14673},${129.065694}&hl=ko&z=15&output=embed`}
+          src="https://www.google.com/maps/d/embed?mid=12oKrUpLaWVwHJm1jAL0fPqiE7z5JiF4&ehbc=2E312F&noprof=1"
           width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
+          height="480"
+        ></iframe>
       </div>
       <CTAPartnership />
     </>
