@@ -64,7 +64,7 @@
     />
   </head>
   <body>
-      <div
+      <!-- <div
         id="intro"
         style="
           display:flex;
@@ -74,25 +74,26 @@
         "
       >
         <video
-          src="src/sections/logo_play.mp4"
-          width="200"
+          src="src/sections/logo_video.mp4"
+          width="100%"
           autoplay
           muted
           playsinline
-          style="border-radius: 8px;"
         >
         </video>
-      </div>
+      </div> -->
 
-    <div id="root" style="display:none;"></div>
-    <script>
+    <!-- <div id="root" style="display:none;"></div> 나중에 로딩 화면 넣기-->
+    
+    <div id="root"></div>
+    <!-- <script>
       // 5초 후 intro 숨기고 main 보여주기
       setTimeout(() => {
         document.getElementById("intro").style.display = "none";
         document.getElementById("root").style.display = "block";
 
       }, 5000);
-    </script>
+    </script> -->
     </style>
     <script type="module" src="/src/main.tsx"></script>
     <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->

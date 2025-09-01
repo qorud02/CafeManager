@@ -41,7 +41,7 @@ export default function Home() {
               top: 0,
               left: 0,
               width: "100%",
-              height: "80px", // 가릴 높이
+              height: "85px", // 가릴 높이
               background: "#f9fafb",
               zIndex: 10,
             }}
