@@ -29,7 +29,7 @@ export default function CTAPartnership() {
               variant="outline"
               className="border-2 border-white text-white px-10 py-4 rounded-2xl hover:bg-white hover:text-uc-deep transition-all duration-300 font-bold text-lg backdrop-blur-sm"
             >
-              브랜드 가이드 요청
+              회사소개서 다운로드
             </Button>
           </div>
         </motion.div>

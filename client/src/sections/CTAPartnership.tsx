@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import ContactModal from "../components/ContactModal";
+import companyIntroductionPdf from "./companyIntroduction.pdf";
 
 export default function CTAPartnership() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -28,8 +29,16 @@ export default function CTAPartnership() {
             <Button
               variant="outline"
               className="border-2 border-white text-white px-10 py-4 rounded-2xl hover:bg-white hover:text-uc-deep transition-all duration-300 font-bold text-lg backdrop-blur-sm"
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = companyIntroductionPdf; // import한 변수를 사용
+                link.download = "companyIntroduction.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
             >
-              브랜드 가이드 요청
+              회사소개서 다운로드
             </Button>
           </div>
         </motion.div>
