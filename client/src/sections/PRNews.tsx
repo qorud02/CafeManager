@@ -31,13 +31,12 @@ export default function PRNews() {
       id: "franchise",
       icon: FileText,
       category: "보도자료",
-      title: "프랜차이즈 확장 계획 발표",
-      excerpt:
-        "유니컵컴퍼니의 유니컵커피 프랜차이즈 전략과 2025년 확장 계획에 대한...",
-      date: "2025.07.07",
+      title: "유니컵컴퍼니, AI 데이터 전략·특허로 프랜차이즈 기업화 속도",
+      excerpt: "브랜딩·물류·ESG까지 체계화… 차세대 외식기업 모델 제시",
+      date: "2025.09.01",
       gradient: "from-uc-blue to-uc-accent",
       image: customImages.franchise,
-      link: "https://www.newswire.co.kr/newsRead.php?no=1014403", // 내부 링크
+      link: "https://biz.chosun.com/industry/industry_general/2025/09/01/3YPGAXDHW5DWTBUL6N4Q32NQTU/", // 내부 링크
       external: true,
     },
     {

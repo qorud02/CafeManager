@@ -20,11 +20,26 @@ export default function Home() {
         <h2 className="text-3xl md:text-4xl font-bold text-uc-deep mb-10 text-center">
           찾아오시는 길
         </h2>
-        <iframe
-          src="https://www.google.com/maps/d/embed?mid=12oKrUpLaWVwHJm1jAL0fPqiE7z5JiF4&ehbc=2E312F"
-          width="100%"
-          height="500"
-        ></iframe>
+        <div style={{ position: "relative", width: "100%", height: "500px", overflow: "hidden" }}>
+          <iframe
+            src="https://www.google.com/maps/d/embed?mid=12oKrUpLaWVwHJm1jAL0fPqiE7z5JiF4&ehbc=2E312F"
+            width="100%"
+            height="500"
+            style={{ border: 0 }}
+          ></iframe>
+
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "80px",
+              background: "white",
+              zIndex: 10,
+            }}
+          ></div>
+        </div>
       </div>
       <CTAPartnership />
     </>
