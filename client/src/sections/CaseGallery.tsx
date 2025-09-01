@@ -5,7 +5,7 @@ export default function CaseGallery() {
   // 1. 매장 표준화: 실제 매장 이미지 ✅ 설정됨
   // 2. 파트너십: 파트너십 관련 이미지를 customImage1에 추가
   // 3. 품질 관리: 품질 관리 관련 이미지를 customImage2에 추가
-  
+
   const customImages = {
     store: null, // ❌ 매장 표준화 이미지 삭제됨
     partnership: null, // ❌ 파트너십 이미지 삭제됨
@@ -58,13 +58,22 @@ export default function CaseGallery() {
               key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.4, delay: index * 0.15 }} // 초기 애니메이션만
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-32"
+              whileHover={{ y: -2, scale: 1.05 }}
+              transition={{ duration: 0.3, ease: "easeOut" }} // hover 애니메이션: 빠르고 즉각
+              className="
+                  group relative overflow-hidden rounded-2xl
+                  shadow-lg hover:shadow-2xl
+                  transition-shadow duration-150 h-32
+                "
             >
               {(caseItem.image || caseItem.fallbackImage) && (
                 <img
-                  src={(caseItem.image || caseItem.fallbackImage) as unknown as string}
+                  src={
+                    (caseItem.image ||
+                      caseItem.fallbackImage) as unknown as string
+                  }
                   alt={caseItem.alt}
                   className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
                 />

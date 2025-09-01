@@ -58,7 +58,14 @@ export default function BusinessLines() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="group hover:transform hover:-translate-y-2 transition-all duration-300 h-full"
+                whileHover={{ y: -4, scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 250, damping: 18 }}
+                className="
+                  group h-full cursor-pointer
+                  bg-white rounded-2xl shadow-md
+                  hover:shadow-2xl 
+                  transition-all duration-300 ease-out
+                "
               >
                 {business.hasBackground ? (
                   <div className="bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-700 hover:border-uc-accent backdrop-blur-sm h-full flex flex-col">

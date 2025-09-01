@@ -82,9 +82,15 @@ export default function PRNews() {
           <motion.article
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.2, delay: 0.1 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer transform hover:-translate-y-1"
+            whileHover={{ y: -4, scale: 1.02 }}
+            className="
+              bg-white rounded-2xl shadow-lg
+              hover:shadow-2xl  
+              transition-transform transition-shadow duration-50 ease-out
+              overflow-hidden group cursor-pointer
+            "
             onClick={() => handleCardClick(newsItems[0])}
           >
             <div className="p-6">
@@ -110,9 +116,15 @@ export default function PRNews() {
           <motion.article
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.2, delay: 0.1 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer transform hover:-translate-y-1"
+            whileHover={{ y: -4, scale: 1.02 }}
+            className="
+                bg-white rounded-2xl shadow-lg
+                hover:shadow-2xl  
+                transition-transform transition-shadow duration-50 ease-out
+                overflow-hidden group cursor-pointer
+              "
             onClick={() => handleCardClick(newsItems[1])}
           >
             <div className="p-6">
@@ -138,9 +150,15 @@ export default function PRNews() {
           <motion.article
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.2, delay: 0.1 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer transform hover:-translate-y-1"
+            whileHover={{ y: -4, scale: 1.02 }}
+            className="
+                bg-white rounded-2xl shadow-lg
+                hover:shadow-2xl  
+                transition-transform transition-shadow duration-50 ease-out
+                overflow-hidden group cursor-pointer
+              "
             onClick={() => handleCardClick(newsItems[2])}
           >
             <div className="p-6">

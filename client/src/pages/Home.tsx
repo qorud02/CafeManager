@@ -15,6 +15,18 @@ export default function Home() {
       <BusinessLines />
       <CaseGallery />
       <PRNews />
+      {/* 구글 지도 임베드 */}
+      <div className="w-full h-[400px]">
+        <iframe
+          src={`https://www.google.com/maps?q=${35.14673},${129.065694}&hl=ko&z=15&output=embed`}
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
       <CTAPartnership />
     </>
   );
