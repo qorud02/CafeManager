@@ -64,28 +64,35 @@
     />
   </head>
   <body>
-      <div id="root">
-        <div
-          style="
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-          "
+      <div
+        id="intro"
+        style="
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          height:100vh;
+        "
+      >
+        <video
+          src="src/sections/logo_play.mp4"
+          width="200"
+          autoplay
+          muted
+          playsinline
+          style="border-radius: 8px;"
         >
-          <video
-            src="src/sections/logo_play.mp4"
-            width="200"
-            autoplay
-            muted
-            loop
-            playsinline
-            style="border-radius: 8px;"
-          >
-            브라우저가 video 태그를 지원하지 않습니다.
-          </video>
-        </div>
+        </video>
       </div>
+
+    <div id="root"></div>
+    <script>
+      // 5초 후 intro 숨기고 main 보여주기
+      setTimeout(() => {
+        document.getElementById("intro").style.display = "none";
+        document.getElementById("root").style.display = "block";
+
+      }, 5000);
+    </script>
     </style>
     <script type="module" src="/src/main.tsx"></script>
     <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
