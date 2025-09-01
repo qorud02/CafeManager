@@ -21,8 +21,9 @@ export default function BusinessLines() {
       title: "Logistics & Ops",
       description: (
         <>
-          대형 물류사 연동 구조 검토 중<br />
-          <span className="text-sm text-gray-400">(파트너십 체결 후 적용)</span>
+          대형 물류사 연동 구조 적용 완료
+          <br />
+          <span className="text-sm text-gray-400">(파트너십 체결 완료)</span>
         </>
       ),
       hasBackground: false,

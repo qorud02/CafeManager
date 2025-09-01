@@ -43,13 +43,13 @@ export default function PRNews() {
     {
       id: "rnd",
       icon: Lightbulb,
-      category: "혁신",
-      title: "신메뉴 R&D 성과 발표",
-      excerpt: "고객 만족도 극대화를 위한 신메뉴 개발 및 표준화 과정...",
-      date: "2024.03.05",
+      category: "R&D",
+      title: "유니컵커피 '교토 말차 아이스' 출시",
+      excerpt: "프리미엄 감성과 트렌드를 담은 MZ세대 맞춤형 신메뉴 공개...",
+      date: "2025.08.31",
       gradient: "from-uc-accent to-uc-blue",
       image: customImages.rnd,
-      link: "https://unicupcompany.com/", // 내부 링크
+      link: "https://biz.heraldcorp.com/article/10564876?ref=naver",
       external: true,
     },
   ];

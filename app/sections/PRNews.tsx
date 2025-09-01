@@ -22,8 +22,8 @@ export default function PRNews() {
     },
     {
       icon: Lightbulb,
-      category: "혁신",
-      title: "신메뉴 R&D 성과 발표",
+      category: "R&D",
+      title: "유니컵커피 '교토 말차 아이스'출시",
       excerpt: "고객 만족도 극대화를 위한 신메뉴 개발 및 표준화 과정...",
       date: "2024.03.05",
       gradient: "from-uc-accent to-uc-blue",
