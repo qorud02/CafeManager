@@ -28,11 +28,11 @@ export default function CTAPartnership() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
               variant="outline"
-              className="border-2 border-white text-white px-10 py-4 rounded-2xl hover:bg-white hover:text-uc-deep transition-all duration-300 font-bold text-lg backdrop-blur-sm"
+              className="border-2 border-white bg-white text-black px-10 py-4 rounded-2xl hover:bg-gray-100 hover:text-black transition-all duration-300 font-bold text-lg shadow-lg"
               onClick={() => {
                 const link = document.createElement("a");
                 link.href = companyIntroductionPdf; // import한 변수를 사용
-                link.download = "companyIntroduction.pdf";
+                link.download = "unicup_company_b2b_profile_compact_final.pdf";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);

@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Instagram, Youtube } from "lucide-react";
+import { Instagram, Linkedin, Youtube } from "lucide-react";
 
 import Gemini_Generated_Image_tbmyintbmyintbmy______ from "@assets/Gemini_Generated_Image_tbmyintbmyintbmy - 편집함.png";
 
@@ -73,11 +73,22 @@ export default function Footer() {
                 <Instagram className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@unicupcoffee_official"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-uc-accent transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/kyunghan-bae/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-uc-accent transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-6 h-6" />
               </a>
             </div>
             <div className="text-xs space-y-1">
@@ -93,7 +104,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-400">
-          <p>© 2025 UNICUP COMPANY. All rights reserved.</p>
+          <p>© 2026 UNICUP COMPANY. All rights reserved.</p>
         </div>
       </div>
     </footer>

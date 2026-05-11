@@ -27,7 +27,7 @@ export default function CTAPartnership() {
             </Button>
             <Button
               variant="outline"
-              className="border-2 border-white text-white px-10 py-4 rounded-2xl hover:bg-white hover:text-uc-deep transition-all duration-300 font-bold text-lg backdrop-blur-sm"
+              className="border-2 border-white bg-white text-black px-10 py-4 rounded-2xl hover:bg-gray-100 hover:text-black transition-all duration-300 font-bold text-lg shadow-lg"
             >
               회사소개서 다운로드
             </Button>

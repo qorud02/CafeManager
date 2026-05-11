@@ -36,11 +36,11 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 variant="outline"
-                className="border-2 border-white text-white px-8 py-4 rounded-2xl hover:bg-white hover:text-uc-deep transition-all duration-300 font-semibold backdrop-blur-sm"
+                className="border-2 border-white bg-white text-black px-8 py-4 rounded-2xl hover:bg-gray-100 hover:text-black transition-all duration-300 font-semibold shadow-lg"
                 onClick={() => {
                   const link = document.createElement("a");
                   link.href = companyIntroductionPdf; // import한 변수를 사용
-                  link.download = "companyIntroduction.pdf";
+                  link.download = "unicup_company_b2b_profile_compact_final.pdf";
                   document.body.appendChild(link);
                   link.click();
                   document.body.removeChild(link);
