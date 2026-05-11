@@ -25,18 +25,19 @@ export default function AboutUC() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-[0.7fr_1fr] gap-12 lg:gap-20 items-center">
           {/* Left Image */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="lg:max-w-[94%]"
           >
             <img
               src={nano_banana_Model___Nanobanana____1_}
-              alt="유니컵컴퍼니 임원진 회의실 - 전략 기획 및 의사결정 현장"
-              className="rounded-2xl shadow-2xl w-full"
+              alt="유니컵컴퍼니 브랜드 운영 이미지"
+              className="rounded-2xl shadow-xl w-full max-h-[420px] object-cover"
             />
           </motion.div>
 
@@ -53,17 +54,18 @@ export default function AboutUC() {
                 About UniCup Company
               </h2>
               <h3 className="text-xl md:text-2xl text-uc-gray font-light mb-6">
-                검증된 표준으로 만드는 성공 공식
+                운영 표준을 기반으로 성장 구조를 만듭니다
               </h3>
             </div>
 
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              유니컵커피 본점에서 검증된 운영·브랜딩·공급망 표준을 기반으로,
-              가맹 파트너의 빠른 오픈·안정 운영·고객 재방문을 설계합니다.
+              유니컵컴퍼니는 유니컵커피의 현장 운영 경험을 바탕으로,
+              브랜드 운영·품질관리·가맹 확장에 필요한 프랜차이즈 운영
+              구조를 구축합니다.
             </p>
 
             <blockquote className="border-l-4 border-uc-accent bg-gray-50 p-6 mb-8 italic text-lg text-uc-deep">
-              "당신의 매일을 한층 특별하게"
+              "브랜드 감성과 운영 효율을 함께 설계합니다."
             </blockquote>
 
             {/* 3 Points */}

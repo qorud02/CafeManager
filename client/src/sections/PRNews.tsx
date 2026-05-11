@@ -13,9 +13,6 @@ export default function PRNews() {
     rnd: "/images/pr-meeting-presentation.png", // ✅ R&D 뉴스 이미지 (새 미팅 프레젠테이션 이미지)
   };
 
-  const newsSearchUrl = (query: string) =>
-    `https://search.naver.com/search.naver?where=news&query=${encodeURIComponent(query)}`;
-
   const newsItems = [
     {
       id: "partnership",
@@ -24,26 +21,22 @@ export default function PRNews() {
       title: "유니컵컴퍼니, 엔젤 투자 유치… 프랜차이즈 확장 기반 조성",
       excerpt:
         "B2B 신뢰도와 가맹 사업 확장을 위한 성장 기반을 강화했습니다.",
-      date: "2026.04",
+      date: "2026.04.13",
       gradient: "from-uc-deep to-uc-blue",
       image: customImages.partnership,
-      link: newsSearchUrl(
-        "유니컵컴퍼니 엔젤 투자 유치 프랜차이즈 확장 기반 조성",
-      ),
+      link: "https://www.kdpress.co.kr/news/articleView.html?idxno=204229",
       external: true,
     },
     {
       id: "franchise",
       icon: FileText,
       category: "글로벌",
-      title: "유니컵컴퍼니, 중국 CCFA와 산업 교류… WFC 글로벌 프랜차이즈 컨퍼런스 논의",
+      title: "유니컵컴퍼니, 중국 CCFA와 산업 교류... WFC 글로벌 컨퍼런스 초청",
       excerpt: "중국 프랜차이즈 산업 관계자와 교류하며 글로벌 협력 가능성을 논의했습니다.",
-      date: "2026.04",
+      date: "2026.01.19",
       gradient: "from-uc-blue to-uc-accent",
       image: customImages.franchise,
-      link: newsSearchUrl(
-        "유니컵컴퍼니 중국 CCFA 산업 교류 WFC 글로벌 프랜차이즈 컨퍼런스 논의",
-      ),
+      link: "https://www.finomy.com/news/articleView.html?idxno=247955",
       external: true,
     },
     {
