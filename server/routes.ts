@@ -1,20 +1,68 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
 import { sendEmail } from "./sendgrid";
+
+const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "ceo@unicupcompany.com";
+const CONTACT_FROM_EMAIL =
+  process.env.CONTACT_FROM_EMAIL || "info@unicupcompany.com";
+
+const inquiryLabels: Record<string, string> = {
+  franchise: "가맹점 개설",
+  partnership: "사업 제휴",
+  supply: "공급업체 등록",
+  other: "기타",
+};
+
+function escapeHtml(value: unknown) {
+  return String(value ?? "").replace(/[&<>"']/g, (char) => {
+    const entities: Record<string, string> = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    };
+
+    return entities[char];
+  });
+}
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form endpoint
   app.post("/api/contact", async (req, res) => {
     try {
-      const { name, company, email, phone, message, inquiryType } = req.body;
+      const {
+        name,
+        company,
+        email,
+        phone,
+        message,
+        inquiryType,
+        interest,
+        honeypot,
+      } = req.body;
+
+      if (honeypot) {
+        return res.status(204).end();
+      }
 
       // Validate required fields
       if (!name || !email || !message) {
         return res.status(400).json({ error: "필수 필드가 누락되었습니다." });
       }
 
-      const inquiryTypeText = inquiryType === "franchise" ? "가맹" : "제휴";
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return res
+          .status(400)
+          .json({ error: "유효한 이메일 주소를 입력해주세요." });
+      }
+
+      const inquiryKey = inquiryType || interest || "partnership";
+      const inquiryTypeText = inquiryLabels[inquiryKey] || "문의";
+      const submittedAt = new Date().toLocaleString("ko-KR", {
+        timeZone: "Asia/Seoul",
+      });
       
       // Email content
       const emailSubject = `[유니컵컴퍼니] ${inquiryTypeText} 문의 - ${name}`;
@@ -36,33 +84,37 @@ export async function registerRoutes(app: Express): Promise<Server> {
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 8px 0; font-weight: bold; color: #4A5568; width: 100px;">담당자명:</td>
-                <td style="padding: 8px 0; color: #2D3748;">${name}</td>
+                <td style="padding: 8px 0; color: #2D3748;">${escapeHtml(name)}</td>
               </tr>
               ${company ? `
               <tr>
                 <td style="padding: 8px 0; font-weight: bold; color: #4A5568;">회사명:</td>
-                <td style="padding: 8px 0; color: #2D3748;">${company}</td>
+                <td style="padding: 8px 0; color: #2D3748;">${escapeHtml(company)}</td>
               </tr>
               ` : ''}
               <tr>
                 <td style="padding: 8px 0; font-weight: bold; color: #4A5568;">이메일:</td>
                 <td style="padding: 8px 0; color: #2D3748;">
-                  <a href="mailto:${email}" style="color: #1F3B83; text-decoration: none;">${email}</a>
+                  <a href="mailto:${escapeHtml(email)}" style="color: #1F3B83; text-decoration: none;">${escapeHtml(email)}</a>
                 </td>
               </tr>
               ${phone ? `
               <tr>
                 <td style="padding: 8px 0; font-weight: bold; color: #4A5568;">연락처:</td>
-                <td style="padding: 8px 0; color: #2D3748;">${phone}</td>
+                <td style="padding: 8px 0; color: #2D3748;">${escapeHtml(phone)}</td>
               </tr>
               ` : ''}
               <tr>
                 <td style="padding: 8px 0; font-weight: bold; color: #4A5568;">문의 유형:</td>
                 <td style="padding: 8px 0;">
                   <span style="background: #1F3B83; color: white; padding: 4px 12px; border-radius: 20px; font-size: 14px;">
-                    ${inquiryTypeText} 문의
+                    ${escapeHtml(inquiryTypeText)} 문의
                   </span>
                 </td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; font-weight: bold; color: #4A5568;">접수 시각:</td>
+                <td style="padding: 8px 0; color: #2D3748;">${escapeHtml(submittedAt)}</td>
               </tr>
             </table>
           </div>
@@ -72,7 +124,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
               💬 문의 내용
             </h2>
             <div style="background: white; padding: 20px; border-radius: 6px; border-left: 4px solid #1F3B83; line-height: 1.6; color: #2D3748;">
-              ${message.replace(/\n/g, '<br>')}
+              ${escapeHtml(message).replace(/\n/g, '<br>')}
             </div>
           </div>
           
@@ -93,6 +145,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         이메일: ${email}
         ${phone ? `연락처: ${phone}` : ''}
         문의 유형: ${inquiryTypeText} 문의
+        접수 시각: ${submittedAt}
         
         문의 내용:
         ${message}
@@ -105,7 +158,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (process.env.NODE_ENV === 'development') {
         // 개발 환경에서는 콘솔에 이메일 내용 출력
         console.log('=== 📧 이메일 전송 (개발 환경) ===');
-        console.log('To:', 'official@unicupcoffee.com');
+        console.log('To:', CONTACT_TO_EMAIL);
         console.log('Subject:', emailSubject);
         console.log('Content:');
         console.log(emailText);
@@ -114,8 +167,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // 실제 이메일 전송 (개발/프로덕션 공통)
       const emailSent = await sendEmail({
-        to: "official@unicupcoffee.com",
-        from: "noreply@unicupcoffee.com", // This should be a verified sender in SendGrid
+        to: CONTACT_TO_EMAIL,
+        from: CONTACT_FROM_EMAIL,
+        replyTo: email,
         subject: emailSubject,
         text: emailText,
         html: emailHtml

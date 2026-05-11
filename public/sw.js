@@ -1,4 +1,4 @@
-const CACHE_NAME = 'unicup-company-v1';
+const CACHE_NAME = 'unicup-company-v2';
 const urlsToCache = [
   '/',
   '/images/logo-uc-company.png',
@@ -21,8 +21,15 @@ self.addEventListener('install', event => {
   self.skipWaiting();
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - keep pages fresh, use cache as an offline fallback
 self.addEventListener('fetch', event => {
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() => caches.match('/'))
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request)
       .then(response => {

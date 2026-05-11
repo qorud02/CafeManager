@@ -59,7 +59,6 @@ export default function BusinessLines() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -4, scale: 1.01 }}
-                transition={{ type: "spring", stiffness: 250, damping: 18 }}
                 className="
                   group h-full cursor-pointer
                   bg-white rounded-2xl shadow-md

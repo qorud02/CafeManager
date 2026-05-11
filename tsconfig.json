@@ -18,10 +18,10 @@
     "paths": {
       "@/*": ["./client/src/*", "./app/*"],
       "@shared/*": ["./shared/*"],
-      "@/components/*": ["./app/components/*"],
-      "@/lib/*": ["./app/lib/*"],
-      "@/sections/*": ["./app/sections/*"],
-      "@/hooks/*": ["./app/lib/*"]
+      "@/components/*": ["./client/src/components/*", "./app/components/*"],
+      "@/lib/*": ["./client/src/lib/*", "./app/lib/*"],
+      "@/sections/*": ["./client/src/sections/*", "./app/sections/*"],
+      "@/hooks/*": ["./client/src/hooks/*", "./app/lib/*"]
     }
   }
 }

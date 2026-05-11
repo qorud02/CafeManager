@@ -61,7 +61,6 @@ export default function CaseGallery() {
               transition={{ duration: 0.4, delay: index * 0.15 }} // 초기 애니메이션만
               viewport={{ once: true }}
               whileHover={{ y: -2, scale: 1.05 }}
-              transition={{ duration: 0.3, ease: "easeOut" }} // hover 애니메이션: 빠르고 즉각
               className="
                   group relative overflow-hidden rounded-2xl
                   shadow-lg hover:shadow-2xl

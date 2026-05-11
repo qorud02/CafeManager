@@ -54,55 +54,30 @@ export default function ContactForm() {
     setIsSubmitting(true);
     
     try {
-      // Here you would integrate with Formspree or similar service
-      // For now, we'll simulate form submission
-      const formspreeUrl = import.meta.env.VITE_FORMSPREE_URL || process.env.FORMSPREE_URL || "#";
-      
-      if (formspreeUrl !== "#") {
-        const response = await fetch(formspreeUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            company: formData.company,
-            phone: formData.phone,
-            email: formData.email,
-            interest: formData.interest,
-            message: formData.message,
-          }),
-        });
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          company: formData.company,
+          phone: formData.phone,
+          email: formData.email,
+          interest: formData.interest,
+          inquiryType: formData.interest,
+          message: formData.message,
+          privacy: formData.privacy,
+          honeypot: formData.honeypot,
+        }),
+      });
 
-        if (response.ok) {
-          toast({
-            title: "문의 접수 완료",
-            description: "문의가 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.",
-          });
-          
-          // Reset form
-          setFormData({
-            name: "",
-            company: "",
-            phone: "",
-            email: "",
-            interest: "",
-            message: "",
-            privacy: false,
-            honeypot: "",
-          });
-        } else {
-          throw new Error("Form submission failed");
-        }
-      } else {
-        // Simulate successful submission for development
-        await new Promise(resolve => setTimeout(resolve, 1000));
+      if (response.ok) {
         toast({
           title: "문의 접수 완료",
           description: "문의가 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.",
         });
         
-        // Reset form
         setFormData({
           name: "",
           company: "",
@@ -113,11 +88,17 @@ export default function ContactForm() {
           privacy: false,
           honeypot: "",
         });
+      } else {
+        const result = await response.json().catch(() => null);
+        throw new Error(result?.error || "Form submission failed");
       }
     } catch (error) {
       toast({
         title: "전송 실패",
-        description: "문의 전송 중 오류가 발생했습니다. 다시 시도해주세요.",
+        description:
+          error instanceof Error
+            ? error.message
+            : "문의 전송 중 오류가 발생했습니다. 다시 시도해주세요.",
         variant: "destructive",
       });
     } finally {

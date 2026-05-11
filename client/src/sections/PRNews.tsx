@@ -53,7 +53,7 @@ export default function PRNews() {
     },
   ];
 
-  const handleCardClick = (item) => {
+  const handleCardClick = (item: (typeof newsItems)[number]) => {
     if (item.external) {
       // 외부 링크는 새 탭에서 열기
       window.open(item.link, "_blank", "noopener,noreferrer");

@@ -7,6 +7,10 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [location] = useLocation();
+  const partnershipEmail = "ceo@unicupcompany.com";
+  const partnershipMailto = `mailto:${partnershipEmail}?subject=${encodeURIComponent(
+    "유니컵컴퍼니 파트너십 문의",
+  )}`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,8 +62,11 @@ export default function Header() {
               </Link>
             ))}
 
-            <Button className="bg-gray-500 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition-colors duration-300 font-medium">
-              파트너십 문의
+            <Button
+              asChild
+              className="bg-gray-500 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition-colors duration-300 font-medium"
+            >
+              <a href={partnershipMailto}>파트너십 문의</a>
             </Button>
           </div>
 
@@ -97,8 +104,16 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              <Button className="w-full mt-2 bg-uc-blue text-white px-6 py-2 rounded-full font-medium">
-                파트너십 문의
+              <Button
+                asChild
+                className="w-full mt-2 bg-uc-blue text-white px-6 py-2 rounded-full font-medium"
+              >
+                <a
+                  href={partnershipMailto}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  파트너십 문의
+                </a>
               </Button>
             </div>
           </div>

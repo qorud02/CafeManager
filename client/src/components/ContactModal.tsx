@@ -239,7 +239,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         <div className="border-t border-uc-light/20 pt-6 mt-6">
           <p className="text-sm text-uc-gray text-center">
             급하신 문의는{" "}
-            <span className="font-medium text-uc-blue">official@unicupcoffee.com</span>으로 
+            <a
+              href="mailto:info@unicupcompany.com"
+              className="font-medium text-uc-blue hover:underline"
+            >
+              info@unicupcompany.com
+            </a>
+            으로 
             직접 연락해주세요
           </p>
         </div>
