@@ -4,28 +4,30 @@ import { FileText, DollarSign, Lightbulb } from "lucide-react";
 export default function PRNews() {
   const newsItems = [
     {
-      icon: FileText,
-      category: "보도자료",
-      title: "프랜차이즈 확장 계획 발표",
+      icon: DollarSign,
+      category: "투자유치",
+      title: "유니컵컴퍼니, 엔젤 투자 유치… 프랜차이즈 확장 기반 조성",
       excerpt:
-        "유니컵컴퍼니의 새로운 프랜차이즈 전략과 2024년 확장 계획에 대한...",
-      date: "2024.03.15",
+        "B2B 신뢰도와 가맹 사업 확장을 위한 성장 기반을 강화했습니다.",
+      date: "2026.04",
       gradient: "from-uc-blue to-uc-accent",
     },
     {
-      icon: DollarSign,
-      category: "기업뉴스",
-      title: "신규 파트너십 체결 소식",
-      excerpt: "대형 물류업체와의 전략적 파트너십을 통한 공급망 혁신...",
-      date: "2024.03.10",
+      icon: FileText,
+      category: "글로벌",
+      title: "유니컵컴퍼니, 중국 CCFA와 산업 교류… WFC 글로벌 프랜차이즈 컨퍼런스 논의",
+      excerpt:
+        "중국 프랜차이즈 산업 관계자와 교류하며 글로벌 협력 가능성을 논의했습니다.",
+      date: "2026.04",
       gradient: "from-uc-deep to-uc-blue",
     },
     {
       icon: Lightbulb,
-      category: "R&D",
-      title: "유니컵커피 '교토 말차 아이스'출시",
-      excerpt: "고객 만족도 극대화를 위한 신메뉴 개발 및 표준화 과정...",
-      date: "2024.03.05",
+      category: "보도자료",
+      title: "유니컵컴퍼니, AI 데이터 전략·특허로 프랜차이즈 기업화 속도",
+      excerpt:
+        "데이터·특허 기반 운영 전략으로 프랜차이즈 기업화 속도를 높이고 있습니다.",
+      date: "2025.09.01",
       gradient: "from-uc-accent to-uc-blue",
     },
   ];
