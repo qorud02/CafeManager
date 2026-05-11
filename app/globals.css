@@ -7,32 +7,32 @@
 
 :root {
   /* UniCup Brand Colors */
-  --uc-blue: hsl(221, 63%, 31%);
-  --uc-deep: hsl(221, 64%, 8%);
-  --uc-gray: hsl(221, 12%, 59%);
-  --uc-bg: hsl(221, 57%, 7%);
-  --uc-accent: hsl(203, 100%, 58%);
+  --uc-blue: 221 63% 31%;
+  --uc-deep: 221 64% 8%;
+  --uc-gray: 221 12% 59%;
+  --uc-bg: 221 57% 7%;
+  --uc-accent: 203 100% 58%;
   
   /* Base Colors */
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(221, 64%, 8%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(221, 64%, 8%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(221, 64%, 8%);
-  --primary: hsl(221, 63%, 31%);
-  --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(221, 12%, 95%);
-  --secondary-foreground: hsl(221, 64%, 8%);
-  --muted: hsl(221, 12%, 95%);
-  --muted-foreground: hsl(221, 12%, 59%);
-  --accent: hsl(203, 100%, 58%);
-  --accent-foreground: hsl(0, 0%, 100%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(221, 13%, 91%);
-  --input: hsl(221, 13%, 91%);
-  --ring: hsl(203, 100%, 58%);
+  --background: 0 0% 100%;
+  --foreground: 221 64% 8%;
+  --card: 0 0% 100%;
+  --card-foreground: 221 64% 8%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 221 64% 8%;
+  --primary: 221 63% 31%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 221 12% 95%;
+  --secondary-foreground: 221 64% 8%;
+  --muted: 221 12% 95%;
+  --muted-foreground: 221 12% 59%;
+  --accent: 203 100% 58%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 221 13% 91%;
+  --input: 221 13% 91%;
+  --ring: 203 100% 58%;
   --radius: 1rem;
   
   /* Font families */
@@ -41,25 +41,25 @@
 }
 
 .dark {
-  --background: hsl(221, 57%, 7%);
-  --foreground: hsl(0, 0%, 95%);
-  --card: hsl(221, 64%, 8%);
-  --card-foreground: hsl(0, 0%, 95%);
-  --popover: hsl(221, 57%, 7%);
-  --popover-foreground: hsl(0, 0%, 95%);
-  --primary: hsl(203, 100%, 58%);
-  --primary-foreground: hsl(221, 64%, 8%);
-  --secondary: hsl(221, 12%, 15%);
-  --secondary-foreground: hsl(0, 0%, 95%);
-  --muted: hsl(221, 12%, 15%);
-  --muted-foreground: hsl(221, 12%, 59%);
-  --accent: hsl(203, 100%, 58%);
-  --accent-foreground: hsl(221, 64%, 8%);
-  --destructive: hsl(0, 62%, 30%);
-  --destructive-foreground: hsl(0, 0%, 95%);
-  --border: hsl(221, 12%, 15%);
-  --input: hsl(221, 12%, 15%);
-  --ring: hsl(203, 100%, 58%);
+  --background: 221 57% 7%;
+  --foreground: 0 0% 95%;
+  --card: 221 64% 8%;
+  --card-foreground: 0 0% 95%;
+  --popover: 221 57% 7%;
+  --popover-foreground: 0 0% 95%;
+  --primary: 203 100% 58%;
+  --primary-foreground: 221 64% 8%;
+  --secondary: 221 12% 15%;
+  --secondary-foreground: 0 0% 95%;
+  --muted: 221 12% 15%;
+  --muted-foreground: 221 12% 59%;
+  --accent: 203 100% 58%;
+  --accent-foreground: 221 64% 8%;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 95%;
+  --border: 221 12% 15%;
+  --input: 221 12% 15%;
+  --ring: 203 100% 58%;
 }
 
 @layer base {

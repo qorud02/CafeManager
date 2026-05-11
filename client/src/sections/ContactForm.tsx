@@ -216,10 +216,10 @@ export default function ContactForm() {
               onValueChange={(value) => handleInputChange("interest", value)}
               required
             >
-              <SelectTrigger className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-uc-accent focus:border-transparent transition-all duration-200">
+              <SelectTrigger className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white text-uc-deep focus:ring-2 focus:ring-uc-accent focus:border-transparent transition-all duration-200">
                 <SelectValue placeholder="선택해주세요" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-white text-uc-deep border-gray-200 shadow-xl">
                 <SelectItem value="franchise">가맹점 개설</SelectItem>
                 <SelectItem value="partnership">사업 제휴</SelectItem>
                 <SelectItem value="supply">공급업체 등록</SelectItem>
@@ -265,7 +265,7 @@ export default function ContactForm() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="bg-uc-blue text-white px-12 py-4 rounded-2xl hover:bg-uc-deep transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="min-w-[13rem] bg-[#1F3B83] text-white px-12 py-4 rounded-2xl hover:bg-[#10204A] transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:bg-[#1F3B83] disabled:text-white disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "전송 중..." : "문의 보내기"}
             </Button>
