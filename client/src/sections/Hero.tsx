@@ -40,7 +40,7 @@ export default function Hero() {
                 onClick={() => {
                   const link = document.createElement("a");
                   link.href = companyIntroductionPdf; // import한 변수를 사용
-                  link.download = "unicup_company_b2b_profile_compact_final.pdf";
+                  link.download = "범용회사소개서.pdf";
                   document.body.appendChild(link);
                   link.click();
                   document.body.removeChild(link);
